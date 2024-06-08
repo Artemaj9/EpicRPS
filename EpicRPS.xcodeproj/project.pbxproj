@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
+		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
+		AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9B2C1510D70085A617 /* Assets.xcassets */; };
+		AC00CD9F2C1510D70085A617 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9E2C1510D70085A617 /* Preview Assets.xcassets */; };
+		AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDA62C1511E70085A617 /* BackgroundView.swift */; };
+		AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDA92C15127F0085A617 /* TimeProgressView.swift */; };
+		AC00CDAD2C1514350085A617 /* FightLoadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */; };
+		AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDAE2C1514710085A617 /* RoundView.swift */; };
+		AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDB02C1514820085A617 /* EndGameView.swift */; };
+		AC00CDB42C1515210085A617 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDB32C1515210085A617 /* GameView.swift */; };
+		AC00CDB62C1515370085A617 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDB52C1515370085A617 /* MainView.swift */; };
+		AC00CDB92C1515D30085A617 /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDB82C1515D30085A617 /* Image+Ext.swift */; };
+		AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDBD2C1518510085A617 /* PlayerModel.swift */; };
+		AC00CDC02C1519200085A617 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDBF2C1519200085A617 /* SplashView.swift */; };
+		AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDC12C151B9C0085A617 /* SettingsView.swift */; };
+		AC00CDC52C1521170085A617 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDC42C1521160085A617 /* GameViewModel.swift */; };
+		AC00CDC92C1526A90085A617 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC00CDC82C1526A90085A617 /* Rubik-Medium.ttf */; };
+		AC00CDCB2C1526B40085A617 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */; };
+		AC00CDCD2C1526C10085A617 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC00CDCC2C1526C10085A617 /* Rubik-Bold.ttf */; };
+		AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDCF2C152ACB0085A617 /* RulesView.swift */; };
+		AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD12C152B7C0085A617 /* LeaderBoardView.swift */; };
+		AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */; };
+		AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD52C152E170085A617 /* NameEditingView.swift */; };
+		AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD72C1530A00085A617 /* RPSFont.swift */; };
+		AC00CDDA2C1531430085A617 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD92C1531430085A617 /* TextData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
+		AC00CD992C1510D60085A617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC00CD9B2C1510D70085A617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC00CD9E2C1510D70085A617 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC00CDA62C1511E70085A617 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		AC00CDA92C15127F0085A617 /* TimeProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProgressView.swift; sourceTree = "<group>"; };
+		AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightLoadScreen.swift; sourceTree = "<group>"; };
+		AC00CDAE2C1514710085A617 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		AC00CDB02C1514820085A617 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
+		AC00CDB32C1515210085A617 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		AC00CDB52C1515370085A617 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AC00CDB82C1515D30085A617 /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		AC00CDBD2C1518510085A617 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		AC00CDBF2C1519200085A617 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		AC00CDC12C151B9C0085A617 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC00CDC42C1521160085A617 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		AC00CDC82C1526A90085A617 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		AC00CDCC2C1526C10085A617 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		AC00CDCE2C15275A0085A617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC00CDCF2C152ACB0085A617 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		AC00CDD12C152B7C0085A617 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
+		AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionView.swift; sourceTree = "<group>"; };
+		AC00CDD52C152E170085A617 /* NameEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditingView.swift; sourceTree = "<group>"; };
+		AC00CDD72C1530A00085A617 /* RPSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSFont.swift; sourceTree = "<group>"; };
+		AC00CDD92C1531430085A617 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC00CD912C1510D60085A617 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC00CD8B2C1510D60085A617 = {
+			isa = PBXGroup;
+			children = (
+				AC00CD962C1510D60085A617 /* EpicRPS */,
+				AC00CD952C1510D60085A617 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC00CD952C1510D60085A617 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CD942C1510D60085A617 /* EpicRPS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC00CD962C1510D60085A617 /* EpicRPS */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDCE2C15275A0085A617 /* Info.plist */,
+				AC00CD972C1510D60085A617 /* EpicRPSApp.swift */,
+				AC00CD992C1510D60085A617 /* ContentView.swift */,
+				AC00CDAB2C1513470085A617 /* Screens */,
+				AC00CDB22C1514FE0085A617 /* Views */,
+				AC00CDC32C1520F50085A617 /* ViewModels */,
+				AC00CDBA2C1518190085A617 /* Models */,
+				AC00CDA52C1511D40085A617 /* Components */,
+				AC00CDB72C1515A10085A617 /* Extensions */,
+				AC00CDA82C1512450085A617 /* Resources */,
+				AC00CD9D2C1510D70085A617 /* Preview Content */,
+			);
+			path = EpicRPS;
+			sourceTree = "<group>";
+		};
+		AC00CD9D2C1510D70085A617 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CD9E2C1510D70085A617 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC00CDA52C1511D40085A617 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
+				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AC00CDA82C1512450085A617 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDC62C1521A30085A617 /* Fonts */,
+				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
+				AC00CDD92C1531430085A617 /* TextData.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC00CDAB2C1513470085A617 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDBF2C1519200085A617 /* SplashView.swift */,
+				AC00CDB52C1515370085A617 /* MainView.swift */,
+				AC00CDCF2C152ACB0085A617 /* RulesView.swift */,
+				AC00CDC12C151B9C0085A617 /* SettingsView.swift */,
+				AC00CDB32C1515210085A617 /* GameView.swift */,
+				AC00CDD12C152B7C0085A617 /* LeaderBoardView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AC00CDB22C1514FE0085A617 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDB02C1514820085A617 /* EndGameView.swift */,
+				AC00CDD52C152E170085A617 /* NameEditingView.swift */,
+				AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */,
+				AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */,
+				AC00CDAE2C1514710085A617 /* RoundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC00CDB72C1515A10085A617 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDB82C1515D30085A617 /* Image+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC00CDBA2C1518190085A617 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDBD2C1518510085A617 /* PlayerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC00CDC32C1520F50085A617 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDC42C1521160085A617 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AC00CDC62C1521A30085A617 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC00CDD72C1530A00085A617 /* RPSFont.swift */,
+				AC00CDC82C1526A90085A617 /* Rubik-Medium.ttf */,
+				AC00CDCC2C1526C10085A617 /* Rubik-Bold.ttf */,
+				AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC00CD932C1510D60085A617 /* EpicRPS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC00CDA22C1510D70085A617 /* Build configuration list for PBXNativeTarget "EpicRPS" */;
+			buildPhases = (
+				AC00CD902C1510D60085A617 /* Sources */,
+				AC00CD912C1510D60085A617 /* Frameworks */,
+				AC00CD922C1510D60085A617 /* Resources */,
+				AC00CDC72C1523240085A617 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EpicRPS;
+			productName = EpicRPS;
+			productReference = AC00CD942C1510D60085A617 /* EpicRPS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC00CD8C2C1510D60085A617 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					AC00CD932C1510D60085A617 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = AC00CD8F2C1510D60085A617 /* Build configuration list for PBXProject "EpicRPS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC00CD8B2C1510D60085A617;
+			productRefGroup = AC00CD952C1510D60085A617 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC00CD932C1510D60085A617 /* EpicRPS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC00CD922C1510D60085A617 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC00CDC92C1526A90085A617 /* Rubik-Medium.ttf in Resources */,
+				AC00CDCB2C1526B40085A617 /* Rubik-Regular.ttf in Resources */,
+				AC00CD9F2C1510D70085A617 /* Preview Assets.xcassets in Resources */,
+				AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */,
+				AC00CDCD2C1526C10085A617 /* Rubik-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC00CDC72C1523240085A617 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC00CD902C1510D60085A617 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC00CDDA2C1531430085A617 /* TextData.swift in Sources */,
+				AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */,
+				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
+				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
+				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
+				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
+				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
+				AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */,
+				AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */,
+				AC00CDC02C1519200085A617 /* SplashView.swift in Sources */,
+				AC00CDC52C1521170085A617 /* GameViewModel.swift in Sources */,
+				AC00CDAD2C1514350085A617 /* FightLoadScreen.swift in Sources */,
+				AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */,
+				AC00CDB92C1515D30085A617 /* Image+Ext.swift in Sources */,
+				AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */,
+				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
+				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
+				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
+				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
+				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC00CDA02C1510D70085A617 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC00CDA12C1510D70085A617 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC00CDA32C1510D70085A617 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EpicRPS/Preview Content\"";
+				DEVELOPMENT_TEAM = 482344W3R3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EpicRPS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Epic RPS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Artemaj.EpicRPS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC00CDA42C1510D70085A617 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EpicRPS/Preview Content\"";
+				DEVELOPMENT_TEAM = 482344W3R3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EpicRPS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Epic RPS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Artemaj.EpicRPS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC00CD8F2C1510D60085A617 /* Build configuration list for PBXProject "EpicRPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC00CDA02C1510D70085A617 /* Debug */,
+				AC00CDA12C1510D70085A617 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC00CDA22C1510D70085A617 /* Build configuration list for PBXNativeTarget "EpicRPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC00CDA32C1510D70085A617 /* Debug */,
+				AC00CDA42C1510D70085A617 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC00CD8C2C1510D60085A617 /* Project object */;
+}
