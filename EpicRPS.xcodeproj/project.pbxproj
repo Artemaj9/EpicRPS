@@ -33,8 +33,6 @@
 		AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD72C1530A00085A617 /* RPSFont.swift */; };
 		AC00CDDA2C1531430085A617 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD92C1531430085A617 /* TextData.swift */; };
 		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
-		AC5453862C174708003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453852C174708003459D1 /* SoundService.swift */; };
-		AC5453882C17474C003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453872C17474C003459D1 /* Sounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +64,6 @@
 		AC00CDD72C1530A00085A617 /* RPSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSFont.swift; sourceTree = "<group>"; };
 		AC00CDD92C1531430085A617 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
 		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		AC5453852C174708003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
-		AC5453872C17474C003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +132,6 @@
 		AC00CDA82C1512450085A617 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AC5453842C1746F7003459D1 /* Sounds */,
 				AC00CDC62C1521A30085A617 /* Fonts */,
 				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
 				AC00CDD92C1531430085A617 /* TextData.swift */,
@@ -210,13 +205,6 @@
 				AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */,
 			);
 			path = UserDefaults;
-		AC5453842C1746F7003459D1 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				AC5453852C174708003459D1 /* SoundService.swift */,
-				AC5453872C17474C003459D1 /* Sounds.swift */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,7 +312,6 @@
 				AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */,
 				AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */,
 				AC00CDC02C1519200085A617 /* SplashView.swift in Sources */,
-				AC5453882C17474C003459D1 /* Sounds.swift in Sources */,
 				AC00CDC52C1521170085A617 /* GameViewModel.swift in Sources */,
 				AC00CDAD2C1514350085A617 /* FightLoadScreen.swift in Sources */,
 				AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */,
@@ -335,7 +322,6 @@
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
 				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
-				AC5453862C174708003459D1 /* SoundService.swift in Sources */,
 				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
