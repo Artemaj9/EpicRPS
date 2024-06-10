@@ -32,6 +32,7 @@
 		AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD52C152E170085A617 /* NameEditingView.swift */; };
 		AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD72C1530A00085A617 /* RPSFont.swift */; };
 		AC00CDDA2C1531430085A617 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD92C1531430085A617 /* TextData.swift */; };
+		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		AC00CDD52C152E170085A617 /* NameEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditingView.swift; sourceTree = "<group>"; };
 		AC00CDD72C1530A00085A617 /* RPSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSFont.swift; sourceTree = "<group>"; };
 		AC00CDD92C1531430085A617 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
+		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				AC00CDB22C1514FE0085A617 /* Views */,
 				AC00CDC32C1520F50085A617 /* ViewModels */,
 				AC00CDBA2C1518190085A617 /* Models */,
+				AC5453892C17547D003459D1 /* UserDefaults */,
 				AC00CDA52C1511D40085A617 /* Components */,
 				AC00CDB72C1515A10085A617 /* Extensions */,
 				AC00CDA82C1512450085A617 /* Resources */,
@@ -194,6 +197,14 @@
 				AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AC5453892C17547D003459D1 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 				AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */,
 				AC00CDB92C1515D30085A617 /* Image+Ext.swift in Sources */,
 				AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */,
+				AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */,
 				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
