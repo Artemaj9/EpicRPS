@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44DAB25A2C1721B200AE282A /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DAB2592C1721B200AE282A /* ScaleView.swift */; };
 		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
 		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
 		AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9B2C1510D70085A617 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44DAB2592C1721B200AE282A /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
 		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
 		AC00CD992C1510D60085A617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
 				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
+				44DAB2592C1721B200AE282A /* ScaleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				AC00CDDA2C1531430085A617 /* TextData.swift in Sources */,
 				AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */,
 				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
+				44DAB25A2C1721B200AE282A /* ScaleView.swift in Sources */,
 				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
