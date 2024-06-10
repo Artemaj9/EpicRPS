@@ -6,7 +6,12 @@ import SwiftUI
 
 struct GameView: View {
     var body: some View {
-        Text("")
+        RoundView(
+            femaleArm: FemaleArms.femalePaper,
+            maleArm: MaleArms.maleRock,
+            roundText: RoundTextStatus.win,
+            textIsShowing: true
+        )
     }
 }
 
