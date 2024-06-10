@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */; };
+		4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174612C176E49005234F8 /* Poppins-Regular.ttf */; };
+		4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */; };
 		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
 		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
 		AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9B2C1510D70085A617 /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
+		4E0174612C176E49005234F8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
 		AC00CD992C1510D60085A617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDD72C1530A00085A617 /* RPSFont.swift */,
+				4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */,
+				4E0174612C176E49005234F8 /* Poppins-Regular.ttf */,
+				4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */,
 				AC00CDC82C1526A90085A617 /* Rubik-Medium.ttf */,
 				AC00CDCC2C1526C10085A617 /* Rubik-Bold.ttf */,
 				AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */,
@@ -282,7 +291,10 @@
 			files = (
 				AC00CDC92C1526A90085A617 /* Rubik-Medium.ttf in Resources */,
 				AC00CDCB2C1526B40085A617 /* Rubik-Regular.ttf in Resources */,
+				4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */,
+				4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */,
 				AC00CD9F2C1510D70085A617 /* Preview Assets.xcassets in Resources */,
+				4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */,
 				AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */,
 				AC00CDCD2C1526C10085A617 /* Rubik-Bold.ttf in Resources */,
 			);
