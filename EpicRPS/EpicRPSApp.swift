@@ -8,7 +8,7 @@ import SwiftUI
 struct EpicRPSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
