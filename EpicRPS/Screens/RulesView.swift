@@ -8,16 +8,15 @@ struct RulesView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading, spacing: 16) {
                 //Spacer()
                 RulesStyle(number: "1", textRule: Text(RulesTxt.rule1))
                 RulesStyle(number: "2", textRule: Text(RulesTxt.rule2))
                 
                 VStack(alignment: .leading) {
-                    RulesExtraStyle(gesture: RulesImage.stone, textRule: RulesTxt.rule2_1)
-                    RulesExtraStyle(gesture: RulesImage.paper, textRule: RulesTxt.rule2_2)
-                    RulesExtraStyle(gesture: RulesImage.scissors, textRule: RulesTxt.rule2_3)
+                    RulesExtraStyle(gesture: RulesImage.stone, textRule: RulesTxt.rule21)
+                    RulesExtraStyle(gesture: RulesImage.paper, textRule: RulesTxt.rule22)
+                    RulesExtraStyle(gesture: RulesImage.scissors, textRule: RulesTxt.rule23)
                 }
                 
                 RulesStyle(number: "3", textRule: Text(RulesTxt.rule3))
@@ -42,13 +41,11 @@ struct RulesView: View {
                         .font(.custom(.rubikRegular, size: 25))
                 }
             }
-        }
     }
     
     private func customRule5Text() -> Text {
         let part1 = Text("За каждую победу игрок получает ")
-        
-        #warning("Tут нужно использовать точечный модификатор цвета для foregroundColor")
+
         let highlighted = Text("500 баллов,").foregroundColor(Color("rpsPurple"))
         
         let part2 = Text(" которые можно посмотреть на доске лидеров.")
@@ -79,6 +76,8 @@ struct RulesStyle: View {
 
 #Preview {
     RulesView()
+}
+
 struct RulesExtraStyle: View {
     var gesture: String
     var textRule: String
