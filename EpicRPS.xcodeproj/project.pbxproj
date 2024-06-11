@@ -344,6 +344,7 @@
 				AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */,
 				4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */,
 				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
+				44DAB25A2C1721B200AE282A /* ScaleView.swift in Sources */,
 				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
