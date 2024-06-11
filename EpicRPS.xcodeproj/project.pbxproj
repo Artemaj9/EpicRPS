@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44DAB25A2C1721B200AE282A /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DAB2592C1721B200AE282A /* ScaleView.swift */; };
+		4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441532592C1867A9001B773E /* NavigationHeader.swift */; };
+		4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */; };
+		4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174612C176E49005234F8 /* Poppins-Regular.ttf */; };
+		4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */; };
+		7A2E789F2C181F7E00A4EFE6 /* GameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */; };
 		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
 		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
 		AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9B2C1510D70085A617 /* Assets.xcassets */; };
@@ -33,10 +37,19 @@
 		AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD52C152E170085A617 /* NameEditingView.swift */; };
 		AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD72C1530A00085A617 /* RPSFont.swift */; };
 		AC00CDDA2C1531430085A617 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDD92C1531430085A617 /* TextData.swift */; };
+		AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96AC2C18332D00E7D29D /* GameState.swift */; };
+		AC0E96B32C189F9A00E7D29D /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96B22C189F9A00E7D29D /* View+ext.swift */; };
+		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
+		AC5453942C176D9B003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453932C176D9B003459D1 /* SoundService.swift */; };
+		AC5453962C176DD9003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453952C176DD9003459D1 /* Sounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44DAB2592C1721B200AE282A /* ScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleView.swift; sourceTree = "<group>"; };
+		441532592C1867A9001B773E /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
+		4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
+		4E0174612C176E49005234F8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtons.swift; sourceTree = "<group>"; };
 		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
 		AC00CD992C1510D60085A617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +77,11 @@
 		AC00CDD52C152E170085A617 /* NameEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditingView.swift; sourceTree = "<group>"; };
 		AC00CDD72C1530A00085A617 /* RPSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSFont.swift; sourceTree = "<group>"; };
 		AC00CDD92C1531430085A617 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
+		AC0E96AC2C18332D00E7D29D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		AC0E96B22C189F9A00E7D29D /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
+		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		AC5453932C176D9B003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		AC5453952C176DD9003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,7 @@
 				AC00CDB22C1514FE0085A617 /* Views */,
 				AC00CDC32C1520F50085A617 /* ViewModels */,
 				AC00CDBA2C1518190085A617 /* Models */,
+				AC5453892C17547D003459D1 /* UserDefaults */,
 				AC00CDA52C1511D40085A617 /* Components */,
 				AC00CDB72C1515A10085A617 /* Extensions */,
 				AC00CDA82C1512450085A617 /* Resources */,
@@ -124,7 +143,7 @@
 			children = (
 				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
 				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
-				44DAB2592C1721B200AE282A /* ScaleView.swift */,
+				441532592C1867A9001B773E /* NavigationHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -132,6 +151,7 @@
 		AC00CDA82C1512450085A617 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC5453922C176D61003459D1 /* Sounds */,
 				AC00CDC62C1521A30085A617 /* Fonts */,
 				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
 				AC00CDD92C1531430085A617 /* TextData.swift */,
@@ -160,6 +180,7 @@
 				AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */,
 				AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */,
 				AC00CDAE2C1514710085A617 /* RoundView.swift */,
+				7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDB82C1515D30085A617 /* Image+Ext.swift */,
+				AC0E96B22C189F9A00E7D29D /* View+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDBD2C1518510085A617 /* PlayerModel.swift */,
+				AC0E96AC2C18332D00E7D29D /* GameState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,11 +215,31 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDD72C1530A00085A617 /* RPSFont.swift */,
+				4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */,
+				4E0174612C176E49005234F8 /* Poppins-Regular.ttf */,
+				4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */,
 				AC00CDC82C1526A90085A617 /* Rubik-Medium.ttf */,
 				AC00CDCC2C1526C10085A617 /* Rubik-Bold.ttf */,
 				AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AC5453892C17547D003459D1 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		AC5453922C176D61003459D1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AC5453932C176D9B003459D1 /* SoundService.swift */,
+				AC5453952C176DD9003459D1 /* Sounds.swift */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +303,10 @@
 			files = (
 				AC00CDC92C1526A90085A617 /* Rubik-Medium.ttf in Resources */,
 				AC00CDCB2C1526B40085A617 /* Rubik-Regular.ttf in Resources */,
+				4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */,
+				4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */,
 				AC00CD9F2C1510D70085A617 /* Preview Assets.xcassets in Resources */,
+				4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */,
 				AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */,
 				AC00CDCD2C1526C10085A617 /* Rubik-Bold.ttf in Resources */,
 			);
@@ -296,23 +342,30 @@
 			files = (
 				AC00CDDA2C1531430085A617 /* TextData.swift in Sources */,
 				AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */,
+				4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */,
 				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
 				44DAB25A2C1721B200AE282A /* ScaleView.swift in Sources */,
 				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
 				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
+				AC0E96B32C189F9A00E7D29D /* View+ext.swift in Sources */,
 				AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */,
 				AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */,
 				AC00CDC02C1519200085A617 /* SplashView.swift in Sources */,
+				AC5453962C176DD9003459D1 /* Sounds.swift in Sources */,
 				AC00CDC52C1521170085A617 /* GameViewModel.swift in Sources */,
 				AC00CDAD2C1514350085A617 /* FightLoadScreen.swift in Sources */,
+				7A2E789F2C181F7E00A4EFE6 /* GameButtons.swift in Sources */,
 				AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */,
 				AC00CDB92C1515D30085A617 /* Image+Ext.swift in Sources */,
 				AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */,
+				AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */,
 				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
+				AC5453942C176D9B003459D1 /* SoundService.swift in Sources */,
+				AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */,
 				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
 				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
 			);

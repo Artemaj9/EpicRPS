@@ -5,14 +5,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = GameViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if vm.isSplash {
+                SplashView()
+                    .transition(.move(edge: .trailing))
+            } else {
+                MainView()
+                    .environmentObject(vm)
+            }
         }
-        .padding()
+        .ignoresSafeArea()
+        .runAfterAppear(delay: 3) {
+            vm.isSplash = false
+        }
+//        .onAppear {
+//            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+//                withAnimation {
+//                    self.vm.isSplash = false
+//                }
+//            }
+//        }
     }
 }
 
