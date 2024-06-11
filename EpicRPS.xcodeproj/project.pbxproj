@@ -41,6 +41,8 @@
 		AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96AC2C18332D00E7D29D /* GameState.swift */; };
 		AC0E96B32C189F9A00E7D29D /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96B22C189F9A00E7D29D /* View+ext.swift */; };
 		AC0E96B52C18B79200E7D29D /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96B42C18B79200E7D29D /* ScaleView.swift */; };
+		AC340CFC2C18E811000A3B15 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340CFB2C18E811000A3B15 /* ImageData.swift */; };
+		AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340CFD2C18E878000A3B15 /* SettingsButton.swift */; };
 		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
 		AC5453942C176D9B003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453932C176D9B003459D1 /* SoundService.swift */; };
 		AC5453962C176DD9003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453952C176DD9003459D1 /* Sounds.swift */; };
@@ -83,6 +85,8 @@
 		AC0E96AC2C18332D00E7D29D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		AC0E96B22C189F9A00E7D29D /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		AC0E96B42C18B79200E7D29D /* ScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleView.swift; path = EpicRPS/Components/ScaleView.swift; sourceTree = SOURCE_ROOT; };
+		AC340CFB2C18E811000A3B15 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		AC340CFD2C18E878000A3B15 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AC5453932C176D9B003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		AC5453952C176DD9003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			children = (
 				AC0E96B42C18B79200E7D29D /* ScaleView.swift */,
 				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
+				AC340CFD2C18E878000A3B15 /* SettingsButton.swift */,
 				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
 				441532592C1867A9001B773E /* NavigationHeader.swift */,
 			);
@@ -160,6 +165,7 @@
 				AC00CDC62C1521A30085A617 /* Fonts */,
 				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
 				AC00CDD92C1531430085A617 /* TextData.swift */,
+				AC340CFB2C18E811000A3B15 /* ImageData.swift */,
 				4E01746B2C18C28E005234F8 /* TextImage.swift */,
 			);
 			path = Resources;
@@ -354,6 +360,7 @@
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
 				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
+				AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */,
 				AC0E96B32C189F9A00E7D29D /* View+ext.swift in Sources */,
 				AC00CDD62C152E170085A617 /* NameEditingView.swift in Sources */,
 				AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */,
@@ -369,6 +376,7 @@
 				AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */,
 				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
+				AC340CFC2C18E811000A3B15 /* ImageData.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
 				AC5453942C176D9B003459D1 /* SoundService.swift in Sources */,
 				AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */,
