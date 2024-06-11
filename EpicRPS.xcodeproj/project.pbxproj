@@ -15,6 +15,7 @@
 		7A2E789F2C181F7E00A4EFE6 /* GameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */; };
 		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
 		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
+		AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9B2C1510D70085A617 /* Assets.xcassets */; };
 		AC00CD9F2C1510D70085A617 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC00CD9E2C1510D70085A617 /* Preview Assets.xcassets */; };
 		AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDA62C1511E70085A617 /* BackgroundView.swift */; };
 		AC00CDAA2C15127F0085A617 /* TimeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CDA92C15127F0085A617 /* TimeProgressView.swift */; };
@@ -55,6 +56,7 @@
 		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
 		AC00CD992C1510D60085A617 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC00CD9B2C1510D70085A617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC00CD9E2C1510D70085A617 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC00CDA62C1511E70085A617 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AC00CDA92C15127F0085A617 /* TimeProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProgressView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				AC5453922C176D61003459D1 /* Sounds */,
 				AC00CDC62C1521A30085A617 /* Fonts */,
+				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
 				AC00CDD92C1531430085A617 /* TextData.swift */,
 				4E01746B2C18C28E005234F8 /* TextImage.swift */,
 			);
@@ -305,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC00CDC92C1526A90085A617 /* Rubik-Medium.ttf in Resources */,
-				AC340CEA2C18D2D6000A3B15 /* Poppins-SemiBold.ttf in Resources */,
 				AC00CDCB2C1526B40085A617 /* Rubik-Regular.ttf in Resources */,
 				4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */,
 				4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */,
@@ -313,8 +315,6 @@
 				4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */,
 				AC00CD9C2C1510D70085A617 /* Assets.xcassets in Resources */,
 				AC00CDCD2C1526C10085A617 /* Rubik-Bold.ttf in Resources */,
-				4E4591492C16FF8400025532 /* Assets.xcassets in Resources */,
-				AC340CEC2C18D2E8000A3B15 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +375,6 @@
 				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
 				4E01746C2C18C28E005234F8 /* TextImage.swift in Sources */,
 				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
-				4E0174672C186F99005234F8 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
