@@ -24,7 +24,7 @@ struct GameView: View {
                 )
                     .environmentObject(vm)
             } else {
-                EndGameView()
+                EndGameView(avatarImageName: "", scorePlayer1: 1, scorePlayer2: 1)
                     .environmentObject(vm)
             }
         }
