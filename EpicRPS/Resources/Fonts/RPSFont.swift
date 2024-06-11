@@ -5,9 +5,13 @@
 import SwiftUI
 
 enum RPSFont: String {
-    case rubicRegular = "Rubic-Regular"
-    case rubikMedium = "Rubic-Medium"
-    case rubicBold = "Rubic-Bold"
+    case rubikRegular = "Rubik-Regular"
+    case rubikMedium = "Rubik-Medium"
+    case rubikBold = "Rubik-Bold"
+    case delaGothicOneRegular = "DelaGothicOne-Regular"
+    case poppinsSemiBold = "Poppins-SemiBold"
+    case poppinsRegular = "Poppins-Regular"
+    
 }
 
 extension Font {

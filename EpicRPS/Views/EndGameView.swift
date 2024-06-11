@@ -9,6 +9,9 @@ struct EndGameView: View {
     var avatarImageName: String
     var scorePlayer1 : Int
     var scorePlayer2 : Int
+  
+    @EnvironmentObject var vm: GameViewModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
             ZStack{
@@ -34,7 +37,7 @@ struct EndGameView: View {
                 //Buttons
                 //Button home
                 Button {
-                    //some action
+                      dismiss()
                 }label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 25)
@@ -48,7 +51,7 @@ struct EndGameView: View {
                 }
                 //Button replay
                 Button {
-                    //some action
+                     vm.gamePhase = .round
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 25)
@@ -72,3 +75,4 @@ struct EndGameView: View {
 //#Preview {
 //    EndGameView(avatarImageName: "avatarTest", scorePlayer1: 1, scorePlayer2: 3)
 //}
+
