@@ -43,6 +43,8 @@
 		AC0E96B52C18B79200E7D29D /* ScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E96B42C18B79200E7D29D /* ScaleView.swift */; };
 		AC340CFC2C18E811000A3B15 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340CFB2C18E811000A3B15 /* ImageData.swift */; };
 		AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340CFD2C18E878000A3B15 /* SettingsButton.swift */; };
+		AC340D022C18F6A1000A3B15 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340D012C18F6A1000A3B15 /* MetalView.swift */; };
+		AC340D042C18F6EA000A3B15 /* FractalShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = AC340D032C18F6EA000A3B15 /* FractalShader.metal */; };
 		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
 		AC5453942C176D9B003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453932C176D9B003459D1 /* SoundService.swift */; };
 		AC5453962C176DD9003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453952C176DD9003459D1 /* Sounds.swift */; };
@@ -87,6 +89,8 @@
 		AC0E96B42C18B79200E7D29D /* ScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleView.swift; path = EpicRPS/Components/ScaleView.swift; sourceTree = SOURCE_ROOT; };
 		AC340CFB2C18E811000A3B15 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		AC340CFD2C18E878000A3B15 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		AC340D012C18F6A1000A3B15 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		AC340D032C18F6EA000A3B15 /* FractalShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FractalShader.metal; sourceTree = "<group>"; };
 		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AC5453932C176D9B003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		AC5453952C176DD9003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				AC5453892C17547D003459D1 /* UserDefaults */,
 				AC00CDA52C1511D40085A617 /* Components */,
 				AC00CDB72C1515A10085A617 /* Extensions */,
+				AC340D002C18F642000A3B15 /* Metal */,
 				AC00CDA82C1512450085A617 /* Resources */,
 				AC00CD9D2C1510D70085A617 /* Preview Content */,
 			);
@@ -235,6 +240,15 @@
 				AC00CDCA2C1526B40085A617 /* Rubik-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AC340D002C18F642000A3B15 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				AC340D012C18F6A1000A3B15 /* MetalView.swift */,
+				AC340D032C18F6EA000A3B15 /* FractalShader.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 		AC5453892C17547D003459D1 /* UserDefaults */ = {
@@ -375,7 +389,9 @@
 				AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */,
 				AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */,
 				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
+				AC340D042C18F6EA000A3B15 /* FractalShader.metal in Sources */,
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
+				AC340D022C18F6A1000A3B15 /* MetalView.swift in Sources */,
 				AC340CFC2C18E811000A3B15 /* ImageData.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
 				AC5453942C176D9B003459D1 /* SoundService.swift in Sources */,
