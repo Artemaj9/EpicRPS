@@ -11,6 +11,7 @@
 		4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */; };
 		4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174612C176E49005234F8 /* Poppins-Regular.ttf */; };
 		4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */; };
+		4E01746C2C18C28E005234F8 /* TextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01746B2C18C28E005234F8 /* TextImage.swift */; };
 		7A2E789F2C181F7E00A4EFE6 /* GameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */; };
 		AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD972C1510D60085A617 /* EpicRPSApp.swift */; };
 		AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00CD992C1510D60085A617 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 		4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
 		4E0174612C176E49005234F8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		4E01746B2C18C28E005234F8 /* TextImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImage.swift; sourceTree = "<group>"; };
 		7A2E789E2C181F7E00A4EFE6 /* GameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtons.swift; sourceTree = "<group>"; };
 		AC00CD942C1510D60085A617 /* EpicRPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicRPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC00CD972C1510D60085A617 /* EpicRPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicRPSApp.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				AC00CDC62C1521A30085A617 /* Fonts */,
 				AC00CD9B2C1510D70085A617 /* Assets.xcassets */,
 				AC00CDD92C1531430085A617 /* TextData.swift */,
+				4E01746B2C18C28E005234F8 /* TextImage.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				AC5453942C176D9B003459D1 /* SoundService.swift in Sources */,
 				AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */,
 				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
+				4E01746C2C18C28E005234F8 /* TextImage.swift in Sources */,
 				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
