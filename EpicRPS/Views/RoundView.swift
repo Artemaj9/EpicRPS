@@ -7,19 +7,19 @@
 import SwiftUI
 
 struct RoundView: View {
-
+    
     var femaleArm: String
     var maleArm: String
     var roundText: String
     var textIsShowing: Bool
-
+    
     var body: some View {
-
+        
         VStack {
             // Верхняя картинка руки: female
             Image(femaleArm)
                 .resizableToFit()
-
+            
             // Текст, состояние игры
             if textIsShowing {
                 Text(roundText)

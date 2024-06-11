@@ -18,14 +18,14 @@ struct SettingsButton: View {
 
         } label: {
             Text(text)
-                .font(.custom(.rubikMedium, size: 25)).bold()
+                .font(.custom(.rubikMedium, size: 20)).bold()
                 .foregroundStyle(.white)
-                .shadow(radius: 10)
-                .padding(15)
+                .shadow(radius: 5)
+                .padding(12)
                 .frame(maxWidth: .infinity)
                 .background(.rpsOrange)
-                .clipShape(.rect(cornerRadius: 25))
-                .shadow(color: Color.rpsOrange.opacity(0.3), radius: 20, x: 0, y: 10)
+                .clipShape(.rect(cornerRadius: 20))
+                .shadow(color: Color.rpsOrange.opacity(0.3), radius: 10, x: 0, y: 5)
         }
     }
 }
