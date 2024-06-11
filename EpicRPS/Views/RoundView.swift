@@ -15,13 +15,13 @@ struct RoundView: View {
     @EnvironmentObject var vm: GameViewModel
 
     var body: some View {
-
+        
         VStack {
             // Верхняя картинка руки: female
             Text("\(vm.time)")
             Image(femaleArm)
                 .resizableToFit()
-
+            
             // Текст, состояние игры
             if textIsShowing {
                 Text(roundText)
