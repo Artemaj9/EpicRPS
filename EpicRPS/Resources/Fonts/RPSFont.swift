@@ -19,4 +19,3 @@ extension Font {
         Font.custom(font.rawValue, size: size)
     }
 }
-
