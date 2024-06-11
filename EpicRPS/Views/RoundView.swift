@@ -8,15 +8,17 @@ import SwiftUI
 
 struct RoundView: View {
 
-    var femaleArm: String
-    var maleArm: String
-    var roundText: String
-    var textIsShowing: Bool
+    var femaleArm = FemaleArms.femalePaper
+    var maleArm = MaleArms.maleRock
+    var roundText = RoundTextStatus.win
+    var textIsShowing = true
+    @EnvironmentObject var vm: GameViewModel
 
     var body: some View {
 
         VStack {
             // Верхняя картинка руки: female
+            Text("\(vm.time)")
             Image(femaleArm)
                 .resizableToFit()
 
@@ -32,6 +34,9 @@ struct RoundView: View {
             // Нижняя картинка руки: male
             Image(maleArm)
                 .resizableToFit()
+        }
+        .onAppear {
+            vm.setupTimer()
         }
     }
 }

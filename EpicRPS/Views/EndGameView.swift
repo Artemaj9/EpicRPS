@@ -5,11 +5,29 @@
 import SwiftUI
 
 struct EndGameView: View {
+    @EnvironmentObject var vm: GameViewModel
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Winner: \(vm.winner)")
+            Button {
+                vm.gamePhase = .round
+                
+            } label: {
+                Text("Restart game!")
+            }
+            
+            Button {
+                dismiss()
+            } label: {
+                Text("Go home")
+            }
+        }
     }
 }
 
 #Preview {
     EndGameView()
+        .environmentObject(GameViewModel())
 }
