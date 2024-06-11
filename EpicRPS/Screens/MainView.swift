@@ -8,6 +8,7 @@ struct MainView: View {
   @State private var firstAnim = false
   @State private var secondAnim = false
   @State private var opacity: Double = 0
+  @EnvironmentObject var vm: GameViewModel
 
   var body: some View {
     ZStack {
@@ -70,7 +71,10 @@ struct MainView: View {
             // Start button
             Button {
             } label: {
-              NavigationLink(destination: GameView()) {
+                NavigationLink(
+                    destination:    GameView()
+                .environmentObject(vm)
+                ) {
                 ZStack {
                   RoundedRectangle(cornerRadius: 25)
                     .foregroundStyle(.rpsDarkPeach)
@@ -127,10 +131,14 @@ struct MainView: View {
       }
       .navigationViewStyle(.stack)
     }
+    .onAppear {
+        vm.resetGame()
+    }
     .preferredColorScheme(.light)
   }
 }
 
 #Preview {
   MainView()
+        .environmentObject(GameViewModel())
 }
