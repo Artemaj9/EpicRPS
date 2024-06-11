@@ -6,9 +6,9 @@ import SwiftUI
 
 struct EndGameView: View {
     var win: Bool { scorePlayer1 > scorePlayer2 }
-    var avatarImageName: String
-    var scorePlayer1 : Int
-    var scorePlayer2 : Int
+    var avatarImageName: String = ""
+    var scorePlayer1 : Int = 0
+    var scorePlayer2 : Int = 0
   
     @EnvironmentObject var vm: GameViewModel
     @Environment(\.dismiss) var dismiss
