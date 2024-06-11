@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441532592C1867A9001B773E /* NavigationHeader.swift */; };
 		4E0174602C176D36005234F8 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */; };
 		4E0174622C176E49005234F8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174612C176E49005234F8 /* Poppins-Regular.ttf */; };
 		4E0174642C176E5E005234F8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		441532592C1867A9001B773E /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
 		4E01745F2C176D36005234F8 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
 		4E0174612C176E49005234F8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		4E0174632C176E5E005234F8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
 				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
+				441532592C1867A9001B773E /* NavigationHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				AC00CDDA2C1531430085A617 /* TextData.swift in Sources */,
 				AC00CDD22C152B7C0085A617 /* LeaderBoardView.swift in Sources */,
+				4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */,
 				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
 				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
