@@ -11,26 +11,20 @@ struct ContentView: View {
         ZStack {
             if vm.isSplash {
                 SplashView()
-                    .transition(.move(edge: .trailing))
+                    .environmentObject(vm)
             } else {
                 MainView()
                     .environmentObject(vm)
             }
         }
         .ignoresSafeArea()
-        .runAfterAppear(delay: 3) {
+        .runAfterAppear(delay: 4) {
             vm.isSplash = false
         }
-//        .onAppear {
-//            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-//                withAnimation {
-//                    self.vm.isSplash = false
-//                }
-//            }
-//        }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(GameViewModel())
 }

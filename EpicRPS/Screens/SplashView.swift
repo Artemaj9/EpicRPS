@@ -2,22 +2,57 @@
 //  SplashView.swift
 //
 
-/*
- Это экран, который появляется при запуске приложения.
- Главный экран с меню - MainView
- Splash("всплеск") - это экран загрузки приложения, в фигме не совсем удачный нейминг.
- Cделаем здесь короткую анимацию с иконкой, которую выберем.
- */
-
 import SwiftUI
 
 struct SplashView: View {
+    @State var opacity: CGFloat = 1
+    @State var blur: CGFloat = 0
+    @State var saturation: CGFloat = 0
+    @State var textOpacity: CGFloat = 0
+    @State var offset: Double = 0
+    private let timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
     @EnvironmentObject var vm: GameViewModel
+
     var body: some View {
-        Text("Hello, splash")
+        ZStack {
+            Color.white.ignoresSafeArea()
+                .readSize($vm.size)
+            
+            MetalView()
+                .scaleEffect(5)
+                .offset(x: 1.5*vm.size.width, y: -vm.size.height)
+                .rotationEffect(.degrees(-50))
+                .blur(radius: 70)
+                .saturation(saturation)
+                .animation(.easeIn(duration: 0.7), value: saturation)
+                .opacity(opacity)
+                .animation(.easeIn(duration: 5), value: saturation)
+                .edgesIgnoringSafeArea(.all)
+        }
+        .onAppear {
+            blur = 0
+            opacity = 0
+            saturation = 1
+            textOpacity = 1
+        }
     }
+
 }
 
 #Preview {
     SplashView()
+        .environmentObject(GameViewModel())
 }
+
+
+extension View {
+    func invertMask<Mask: View>(_ mask: Mask) -> some View {
+        self
+            .mask(
+                mask
+                    .blendMode(.destinationOut)
+                    .background(Color.black)
+            )
+    }
+}
+

@@ -6,7 +6,7 @@ import SwiftUI
 import Combine
 
 final class GameViewModel: ObservableObject {
-    @AppStorage("gameTime") var gameTime: Double = 30
+    @AppStorage("gameTime") var gameTime: Double = 10
     @AppStorage("backgroundMusic") var backGroundMusic = Sounds.bgPiano
     @AppStorage("playWithFriend") var playWithFriend = false
 
@@ -40,7 +40,9 @@ final class GameViewModel: ObservableObject {
             .sink { [unowned self] _ in
                 time += 0.1
                 if time >= gameTime {
-                    resetTimer()
+                   
+                        resetTimer()
+                
                 }
             }
             .store(in: &cancellables)
@@ -64,7 +66,9 @@ final class GameViewModel: ObservableObject {
         }
         
       //  if max(player1Score, player2Score) == 3 {
+        withAnimation(.easeIn(duration: 0.4)) {
             gamePhase = .end
+        }
        // }
     }
     
