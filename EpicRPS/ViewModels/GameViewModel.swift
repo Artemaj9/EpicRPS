@@ -4,7 +4,7 @@ import Combine
 final class GameViewModel: ObservableObject {
     @AppStorage("gameTime") var gameTime: Double = 10
     @AppStorage("backgroundMusic") var backGroundMusic = Sounds.bgPiano
-    @AppStorage("playWithFriend") var playWithFriend = false
+    @AppStorage("multiplayer") var multiplayer = false
 
     @Published var size = CGSize(width: 430, height: 932)
     @Published var isSplash = true
@@ -19,6 +19,7 @@ final class GameViewModel: ObservableObject {
     @Published var femaleArm: String = FemaleArms.femaleO
     @Published var maleArm: String = MaleArms.maleO
     @Published var isDraw = false
+    @Published var secondPlayerTurn = false
     @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "avatarTest")
     @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "avatarTest")
     @Published var allPlayers: [Player] = []
@@ -26,22 +27,24 @@ final class GameViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
 
     func startRound() {
-        player2Selection = Selection.random()
+        if !multiplayer {
+            player2Selection = Selection.random()
+        }
         setupTimer()
     }
 
     func startArmAnimation() {
         updateArms()
-        if player1Selection == player2Selection {
-            isDraw = true
-        }
+        isDraw = player1Selection == player2Selection
         performAction(after: 2) {
             self.resetTimer()
         }
     }
 
-   func setupTimer() {
-        player2Selection = Selection.random()
+    func setupTimer() {
+        if !multiplayer {
+            player2Selection = Selection.random()
+        }
         isPaused = false
         Timer.publish(every: 0.1, on: .main, in: .common)
             .autoconnect()
@@ -59,13 +62,17 @@ final class GameViewModel: ObservableObject {
     private func resetTimer() {
         time = 0
         cancellables.forEach { $0.cancel() }
-        print("Player 1: \(player1Selection.rawValue)")
-        print("Computer: \(player2Selection.rawValue)")
         checkWinner()
     }
 
     private func checkWinner() {
-        winner = determineWinner()
+        if player1Selection.rawValue == -1 || player2Selection.rawValue == -1 {
+            winner = player1Selection.rawValue == -1 ? 2 : 1
+        } else {
+            winner = (3 + player2Selection.rawValue - player1Selection.rawValue) % 3
+            // + здесь может быть любое полож число делящееся на 3, чтобы перевести выражение в положительную область
+            // остатки в swift могут быть отрицательные (не так как в матем)
+        }
         updateScores()
         if max(player1Score, player2Score) == 3 {
             endGame()
@@ -73,10 +80,6 @@ final class GameViewModel: ObservableObject {
             resetSelections()
             setupTimer()
         }
-    }
-
-    private func determineWinner() -> Int {
-        return (3 + player2Selection.rawValue - player1Selection.rawValue) % 3
     }
 
     private func updateScores() {
@@ -108,6 +111,7 @@ final class GameViewModel: ObservableObject {
         maleArm = MaleArms.maleO
         femaleArm = FemaleArms.femaleO
         winner = 0
+        secondPlayerTurn = false
     }
 
     private func updatePlayerStats() {
@@ -149,11 +153,17 @@ final class GameViewModel: ObservableObject {
         player1Score = 0
         player2Score = 0
         winner = 0
+        secondPlayerTurn = false
     }
 
     private func updateArms() {
-        maleArm = maleArms[player1Selection.rawValue]
-        femaleArm = femaleArms[player2Selection.rawValue]
+        if !multiplayer {
+            maleArm = maleArms[player1Selection.rawValue]
+            femaleArm = femaleArms[player2Selection.rawValue]
+        } else {
+            maleArm = maleArms[player1Selection.rawValue]
+            femaleArm = femaleArms[player2Selection.rawValue]
+        }
     }
 }
 

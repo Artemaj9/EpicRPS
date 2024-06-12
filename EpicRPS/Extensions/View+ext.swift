@@ -5,14 +5,14 @@
 import SwiftUI
 
 extension View {
-    func runAfterAppear(delay: Double, action: @escaping () -> ()) -> some View {
+    func runAfterAppear(delay: Double, action: @escaping () -> Void) -> some View {
         onAppear {
             performAction(after: delay) {
                 action()
             }
         }
     }
-    
+
     func readSize(_ size: Binding<CGSize>) -> some View {
         self.modifier(SizeReader(size: size))
     }

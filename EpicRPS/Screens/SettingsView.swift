@@ -84,7 +84,7 @@ struct SettingsView: View {
                     Text("Игра с другом")
                         .font(.custom(.rubikMedium, size: 18))
                         .foregroundStyle(.white)
-                    Toggle("", isOn: $playFriend)
+                    Toggle("", isOn: $vm.multiplayer)
                     if playFriend {
                         // появляется секция друга?
                     }

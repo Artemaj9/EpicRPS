@@ -34,7 +34,7 @@ struct EndGameView: View {
                 //Button home
                 Button {
                     vm.resetGame()
-                    vm.gamePhase = .round
+                    vm.gamePhase = .loading
                       dismiss()
                 }label: {
                     ZStack{
