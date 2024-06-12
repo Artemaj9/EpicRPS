@@ -14,8 +14,9 @@ struct SettingsView: View {
     @State private var playFriend = false
 
     var body: some View {
-
         VStack {
+            NavigationHeader(title: "Settings")
+                .frame(maxWidth: .infinity)
             VStack {
                 HStack {
                     Text("время игры")
@@ -107,8 +108,9 @@ struct SettingsView: View {
                     .fill(.black.opacity(0.9)))
             .shadow(radius: 20)
             .padding()
+            Spacer()
         }
-        Spacer()
+        .navigationBarHidden(true)
     }
 }
 

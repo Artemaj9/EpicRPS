@@ -8,8 +8,11 @@ struct RulesView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
+        VStack {
+            NavigationHeader(title: "Rules")
+                .frame(maxWidth: .infinity)
             VStack(alignment: .leading, spacing: 16) {
-                //Spacer()
+                
                 RulesStyle(number: "1", textRule: Text(RulesTxt.rule1))
                 RulesStyle(number: "2", textRule: Text(RulesTxt.rule2))
                 
@@ -27,20 +30,8 @@ struct RulesView: View {
             }
             .padding(.leading, 27)
             .padding(.top, 23)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image("Arrow")
-                    }
-                }
-                ToolbarItem(placement: .principal) {
-                    Text("Rules")
-                        .font(.custom(.rubikRegular, size: 25))
-                }
-            }
+        }
+        .navigationBarHidden(true)
     }
     
     private func customRule5Text() -> Text {

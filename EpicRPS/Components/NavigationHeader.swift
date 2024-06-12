@@ -8,53 +8,55 @@
 import SwiftUI
 
 struct NavigationHeader: View {
-    @State var title: String
-    @State var isRound: Bool
-    @State var isPaused: Bool
-    var leftButtonAction: () -> ()
-    var rightButtonAction: () -> ()
-
+    var title: String
+    var isRound: Bool = false
+    var isPaused: Binding<Bool>?
+    var rightButtonAction: (() -> Void)?
+    var leftButtonAction: (() -> Void)?
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         HStack{
-            Button{
-                leftButtonAction()
+            Button {
+                leftButtonAction?()
+                dismiss()
             } label: {
                 Image(systemName: "control")
                     .resizableToFit()
                     .frame(width: 25)
                     .rotationEffect(.degrees(-90))
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(isRound ? .white : .rpsGray)
             }
             .frame(width: 25)
             Spacer()
             Text(title)
                 .font(.custom(RPSFont.rubikRegular, size: 25))
-                .foregroundStyle(.gray)
+                .foregroundStyle(isRound ? .white : .rpsGray)
             Spacer()
-            Button{
-                rightButtonAction()
-                isPaused.toggle()
+            Button {
+                rightButtonAction?()
             } label: {
-                Image(systemName: !isPaused ? "pause.circle" : "play.circle")
+                Image(systemName: !(isPaused?.wrappedValue ?? false) ? "pause.circle" : "play.circle")
                     .resizableToFit()
                     .frame(width: 25)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.white)
                     .opacity(isRound ? 1 : 0)
-            }       
+
+            }
+            .opacity(isRound ? 1 : 0)
         }
         .frame(maxWidth: .infinity, maxHeight: 40)
         .padding(.horizontal, 10)
     }
     func pauseToggle() {
-        isPaused.toggle()
+        isPaused?.wrappedValue.toggle()
     }
 }
 
 #Preview {
-    NavigationHeader(title: "Игра", isRound: true, isPaused: true) {
+    NavigationHeader(title: "Игра",isRound: false, isPaused: .constant(true)) {
         print("LeftButton")
-    } rightButtonAction: {
-        print("RightButton")
     }
 
 }
