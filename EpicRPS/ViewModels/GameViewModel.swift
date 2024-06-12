@@ -141,6 +141,7 @@ final class GameViewModel: ObservableObject {
     }
 
     func resetGame() {
+        cancellables.forEach { $0.cancel() }
         time = 0
         isPaused = false
         isDraw = false

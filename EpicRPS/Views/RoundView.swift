@@ -7,22 +7,23 @@
 import SwiftUI
 
 struct RoundView: View {
-   // var roundText = RoundTextStatus.win
-   // var textIsShowing = true
     @EnvironmentObject var vm: GameViewModel
 
     var body: some View {
         ZStack {
             VStack {
+                NavigationHeader(title: "Игра", isPaused: $vm.isPaused, isRound: true, rightButtonAction: {
+                    vm.resetGame()
+                }) {
+                    withAnimation {
+                        vm.isPaused.toggle()
+                    }
+                }
                 // Верхняя картинка руки: female
                 Text("\(vm.time)")
                 Image(vm.femaleArm)
                     .resizableToFit()
-                   // .offset(y: -100cos(vm.armTime))
-                 //   .animation(.easeIn, value: vm.armsOffset)
                 
-                // Текст, состояние игры
-               // if vm.isDraw {
                     Text("DRAW")
                     .font(.custom(.rubikMedium, size: 56))
                     .fontWeight(.bold)
@@ -31,12 +32,10 @@ struct RoundView: View {
                         .padding()
                         .opacity(vm.isDraw ? 1 : 0)
                         .animation(.easeIn, value: vm.isDraw)
-               // }
                 
                 // Нижняя картинка руки: male
                 Image(vm.maleArm)
                     .resizableToFit()
-                  //  .offset(y: vm.armsOffset)
             }
             
             HStack {
