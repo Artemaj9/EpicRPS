@@ -13,6 +13,7 @@ struct NavigationHeader: View {
     @State var isPaused: Bool
     var leftButtonAction: () -> ()
     var rightButtonAction: () -> ()
+
     var body: some View {
         HStack{
             Button{
@@ -39,9 +40,7 @@ struct NavigationHeader: View {
                     .frame(width: 25)
                     .foregroundStyle(.gray)
                     .opacity(isRound ? 1 : 0)
-            }
-            
-                
+            }       
         }
         .frame(maxWidth: .infinity, maxHeight: 40)
         .padding(.horizontal, 10)

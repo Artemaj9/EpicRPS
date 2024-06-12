@@ -11,4 +11,3 @@ func performAction(after interval: TimeInterval, action: @escaping () -> Void) {
         }
     }
 }
-
