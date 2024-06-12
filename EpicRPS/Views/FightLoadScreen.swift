@@ -17,10 +17,12 @@ struct FightLoadScreen: View {
                         .resizableToFit()
                         .frame(width: 87)
                         .padding()
+                    
                     HStack {
                         Text("\(vm.currentPlayer2.wins)")
                             .font(.custom(.rubikBold, size: 20))
                             .foregroundStyle(.rpsOrangeText)
+
                         Text("Victories/")
                             .font(.custom(.rubikBold, size: 20))
                             .foregroundStyle(.white)
@@ -29,6 +31,7 @@ struct FightLoadScreen: View {
                         Text("\(vm.currentPlayer2.games - vm.currentPlayer2.wins)")
                             .font(.custom(.rubikBold, size: 20))
                             .foregroundStyle(.rpsRedGradientBG)
+
                         Text("Lose")
                             .font(.custom(.rubikBold, size: 20))
                             .foregroundStyle(.white)
