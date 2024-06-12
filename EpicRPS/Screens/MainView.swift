@@ -44,7 +44,7 @@ struct MainView: View {
           }
 
           Text("EPIC RPS")
-            .font(Font.custom(.rubikBold, size: 30))
+            .font(Font.custom(.rubicBold, size: 30))
             .foregroundStyle(.rpsLightPeach)
             .shadow(color: .rpsDarkPeach, radius: 0, x: 2, y: 2)
             .padding(.vertical, 50)
@@ -94,7 +94,7 @@ struct MainView: View {
                 Spacer(minLength: 100)
               }
               Text("RESULT")
-                .font(Font.custom(.rubikBold, size: 16))
+                .font(Font.custom(.rubicBold, size: 16))
                 .foregroundStyle(.rpsPeachText)
             }
             .frame(maxHeight: 54)
@@ -107,10 +107,12 @@ struct MainView: View {
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .background(.rpsLightGray)
       .onAppear {
+          if !firstAnim {
         firstAnim.toggle()
         opacity = 1
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-          secondAnim.toggle()
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                  secondAnim.toggle()
+              }
         }
       }
       .animation(.bouncy(duration: 1, extraBounce: 0.3), value: firstAnim)
