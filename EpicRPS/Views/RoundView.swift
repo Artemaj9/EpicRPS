@@ -7,11 +7,8 @@
 import SwiftUI
 
 struct RoundView: View {
-
-    var femaleArm = FemaleArms.femalePaper
-    var maleArm = MaleArms.maleRock
-    var roundText = RoundTextStatus.win
-    var textIsShowing = true
+   // var roundText = RoundTextStatus.win
+   // var textIsShowing = true
     @EnvironmentObject var vm: GameViewModel
 
     var body: some View {
@@ -19,22 +16,27 @@ struct RoundView: View {
             VStack {
                 // Верхняя картинка руки: female
                 Text("\(vm.time)")
-                Image(femaleArm)
+                Image(vm.femaleArm)
                     .resizableToFit()
+                   // .offset(y: -100cos(vm.armTime))
+                 //   .animation(.easeIn, value: vm.armsOffset)
                 
                 // Текст, состояние игры
-                if textIsShowing {
-                    Text(roundText)
-                    //.font(.custom(.rubicMedium, size: 56))
-                        .font(.system(size: 56, weight: .bold))
+               // if vm.isDraw {
+                    Text("DRAW")
+                    .font(.custom(.rubikMedium, size: 56))
+                    .fontWeight(.bold)
                         .textCase(.uppercase)
                         .foregroundStyle(.rpsOrange)
                         .padding()
-                }
+                        .opacity(vm.isDraw ? 1 : 0)
+                        .animation(.easeIn, value: vm.isDraw)
+               // }
                 
                 // Нижняя картинка руки: male
-                Image(maleArm)
+                Image(vm.maleArm)
                     .resizableToFit()
+                  //  .offset(y: vm.armsOffset)
             }
             
             HStack {
@@ -50,13 +52,17 @@ struct RoundView: View {
                     .padding(10)
             }
         }
+        .overlay(alignment: .bottom) {
+            GameButtons()
+        }
         .onAppear {
             vm.setupTimer()
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 #Preview {
-    RoundView(femaleArm: FemaleArms.femaleO, maleArm: MaleArms.maleO, roundText: RoundTextStatus.fight, textIsShowing: true)
+    RoundView()
         .environmentObject(GameViewModel())
 }
