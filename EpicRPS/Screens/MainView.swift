@@ -70,6 +70,7 @@ struct MainView: View {
 
             // Start button
             Button {
+                vm.gamePhase = .loading
             } label: {
                 NavigationLink(
                     destination:    GameView()
@@ -134,7 +135,6 @@ struct MainView: View {
     .onAppear {
         vm.resetGame()
     }
-    .preferredColorScheme(.light)
   }
 }
 

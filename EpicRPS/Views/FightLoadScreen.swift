@@ -52,7 +52,7 @@ struct FightLoadScreen: View {
                             .foregroundStyle(.white)
                     }
                     HStack {
-                        Text("\(vm.currentPlayer1.games - vm.currentPlayer2.wins)")
+                        Text("\(vm.currentPlayer1.games - vm.currentPlayer1.wins)")
                             .font(.custom(.rubikBold, size: 20))
                             .foregroundStyle(.rpsRedGradientBG)
                         Text("Lose")
@@ -65,6 +65,7 @@ struct FightLoadScreen: View {
                     .foregroundStyle(.rpsOrangeText)
                     .font(.custom(.rubikMedium, size: 23))
             }
+            .preferredColorScheme(.dark)
         }
     }
 }

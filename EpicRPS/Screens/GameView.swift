@@ -17,17 +17,14 @@ struct GameView: View {
                     }
             } else if vm.gamePhase == .round  {
                 RoundView(
-                    femaleArm: FemaleArms.femalePaper,
-                    maleArm: MaleArms.maleRock,
-                    roundText: RoundTextStatus.win,
-                    textIsShowing: true
                 )
                     .environmentObject(vm)
             } else {
-                EndGameView(avatarImageName: "", scorePlayer1: 1, scorePlayer2: 1)
+                EndGameView()
                     .environmentObject(vm)
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

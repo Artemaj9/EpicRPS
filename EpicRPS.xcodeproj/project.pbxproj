@@ -45,6 +45,8 @@
 		AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340CFD2C18E878000A3B15 /* SettingsButton.swift */; };
 		AC340D022C18F6A1000A3B15 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340D012C18F6A1000A3B15 /* MetalView.swift */; };
 		AC340D042C18F6EA000A3B15 /* FractalShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = AC340D032C18F6EA000A3B15 /* FractalShader.metal */; };
+		AC340D082C1A1972000A3B15 /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340D072C1A1972000A3B15 /* TimerHelper.swift */; };
+		AC340D0A2C1A1ABD000A3B15 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC340D092C1A1ABD000A3B15 /* Selection.swift */; };
 		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
 		AC5453942C176D9B003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453932C176D9B003459D1 /* SoundService.swift */; };
 		AC5453962C176DD9003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453952C176DD9003459D1 /* Sounds.swift */; };
@@ -91,6 +93,8 @@
 		AC340CFD2C18E878000A3B15 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		AC340D012C18F6A1000A3B15 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		AC340D032C18F6EA000A3B15 /* FractalShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FractalShader.metal; sourceTree = "<group>"; };
+		AC340D072C1A1972000A3B15 /* TimerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
+		AC340D092C1A1ABD000A3B15 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AC5453932C176D9B003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		AC5453952C176DD9003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			children = (
 				AC00CDB82C1515D30085A617 /* Image+Ext.swift */,
 				AC0E96B22C189F9A00E7D29D /* View+ext.swift */,
+				AC340D072C1A1972000A3B15 /* TimerHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDBD2C1518510085A617 /* PlayerModel.swift */,
+				AC340D092C1A1ABD000A3B15 /* Selection.swift */,
 				AC0E96AC2C18332D00E7D29D /* GameState.swift */,
 			);
 			path = Models;
@@ -371,6 +377,7 @@
 				4415325A2C1867A9001B773E /* NavigationHeader.swift in Sources */,
 				AC00CDA72C1511E70085A617 /* BackgroundView.swift in Sources */,
 				AC00CDD42C152DD90085A617 /* AvatarSelectionView.swift in Sources */,
+				AC340D082C1A1972000A3B15 /* TimerHelper.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
 				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
@@ -386,6 +393,7 @@
 				AC00CDD82C1530A00085A617 /* RPSFont.swift in Sources */,
 				AC0E96B52C18B79200E7D29D /* ScaleView.swift in Sources */,
 				AC00CDB92C1515D30085A617 /* Image+Ext.swift in Sources */,
+				AC340D0A2C1A1ABD000A3B15 /* Selection.swift in Sources */,
 				AC00CD9A2C1510D60085A617 /* ContentView.swift in Sources */,
 				AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */,
 				AC00CD982C1510D60085A617 /* EpicRPSApp.swift in Sources */,
