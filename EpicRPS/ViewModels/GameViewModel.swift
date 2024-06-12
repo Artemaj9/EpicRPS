@@ -14,8 +14,8 @@ final class GameViewModel: ObservableObject {
     @Published var isSplash = true // показывается ли Splash screen?
     @Published var time: Double = 0 // сколько времени прошло с начала раунда
     @Published var isPaused  = false
-    @Published var player1Score = 0
-    @Published var player2Score = 0
+    @Published var player1Score = 2
+    @Published var player2Score = 1
     @Published var player1Selection = 0
     @Published var player2Selection = 0
     @Published var gamePhase: GameState = .loading
@@ -24,12 +24,12 @@ final class GameViewModel: ObservableObject {
     @Published var currentPlayer1: Player =
     UserDefaultsService.shared.get(
         forKey: "currentPlayer1"
-    ) ?? Player(name: "Player1", avatar: "")
+    ) ?? Player(name: "Player1", avatar: "avatarTest")
     
     @Published var currentPlayer2: Player =
     UserDefaultsService.shared.get(
         forKey: "currentPlayer2"
-    ) ?? Player(name: "Computer", avatar: "")
+    ) ?? Player(name: "Computer", avatar: "avatarTest")
     
     var cancellables = Set<AnyCancellable>()
     
@@ -74,8 +74,8 @@ final class GameViewModel: ObservableObject {
     
     func resetGame() {
         time = 0
-        player1Score = 0
-        player2Score = 0
+      //  player1Score = 0
+       // player2Score = 0
         winner = 0
     }
 }
