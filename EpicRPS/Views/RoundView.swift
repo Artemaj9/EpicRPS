@@ -17,27 +17,41 @@ struct RoundView: View {
                     isRound: true,
                     isPaused: $vm.isPaused,
                     rightButtonAction: {
+                        if !vm.isPaused {
+                            SoundService.player.avPlayer.pause()
+                        } else {
+                            SoundService.player.avPlayer.play()
+                        }
                         vm.isPaused.toggle()
                     },
                     leftButtonAction: {
-                        withAnimation {
+                        SoundService.player.avPlayer.stop()
                             vm.resetGame()
-                        }
+                            vm.gamePhase = .loading
                     }
                 )
                 // Верхняя картинка руки: female
-                Text("\(vm.time)")
                 Image(vm.femaleArm)
                     .resizableToFit()
-                
+               
+                ZStack {
+                    Text("FIGHT")
+                        .font(.custom(.rubikMedium, size: 56))
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundStyle(.rpsOrange)
+                        .padding()
+                        .opacity(vm.time < 1 && !vm.isDraw && max(vm.player1Score, vm.player2Score) < 3 ? 1 : 0)
+                    
                     Text("DRAW")
-                    .font(.custom(.rubikMedium, size: 56))
-                    .fontWeight(.bold)
+                        .font(.custom(.rubikMedium, size: 56))
+                        .fontWeight(.bold)
                         .textCase(.uppercase)
                         .foregroundStyle(.rpsOrange)
                         .padding()
                         .opacity(vm.isDraw ? 1 : 0)
                         .animation(.easeIn, value: vm.isDraw)
+                }
                 
                 // Нижняя картинка руки: male
                 Image(vm.maleArm)

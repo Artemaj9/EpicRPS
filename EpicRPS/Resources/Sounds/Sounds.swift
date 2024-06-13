@@ -5,5 +5,9 @@
 import Foundation
 
 enum Sounds: String {
-    case bgPiano = "bgPiano"
+    case ambient = "ambient"
+    case uprising = "uprising"
+    case dark = "dark"
+    
+    static let music: [Sounds] = [.ambient, .uprising, .dark]
 }
