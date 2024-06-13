@@ -10,12 +10,12 @@ import SwiftUI
 struct SettingsButton: View {
 
     var text = "30 сек."
-    var action = {}
+    var action: () -> Void
 
     var body: some View {
 
         Button {
-
+            action()
         } label: {
             Text(text)
                 .font(.custom(.rubikMedium, size: 20)).bold()
@@ -31,5 +31,5 @@ struct SettingsButton: View {
 }
 
 #Preview {
-    SettingsButton()
+    SettingsButton(action: {})
 }

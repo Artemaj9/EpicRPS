@@ -12,13 +12,19 @@ struct RoundView: View {
     var body: some View {
         ZStack {
             VStack {
-                NavigationHeader(title: "Игра", isPaused: $vm.isPaused, isRound: true, rightButtonAction: {
-                    vm.resetGame()
-                }) {
-                    withAnimation {
+                NavigationHeader(
+                    title: "Игра",
+                    isRound: true,
+                    isPaused: $vm.isPaused,
+                    rightButtonAction: {
                         vm.isPaused.toggle()
+                    },
+                    leftButtonAction: {
+                        withAnimation {
+                            vm.resetGame()
+                        }
                     }
-                }
+                )
                 // Верхняя картинка руки: female
                 Text("\(vm.time)")
                 Image(vm.femaleArm)
