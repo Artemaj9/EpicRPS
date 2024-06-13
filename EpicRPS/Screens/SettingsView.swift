@@ -12,11 +12,20 @@ struct SettingsView: View {
 
     @State private var selectedGameTime: Int? = nil
     @State private var playFriend = false
+    @State private var selection = "Piano"
+    var music = ["Piano", "Guitar", "Bop", "NewJaz", "Tartan", "Blue",
+                 "Pink", "Gray2", "Lii", "Latina", "Violin", "Sitar",
+                 "Banjo", "Green", "Blu1e", "B", "Drums", "Pipe",
+                 "Pink", "Gray", "Lii", "Purple1", "Rain", "Style"]
+    @State var index = 0
 
     var body: some View {
         VStack {
             NavigationHeader(title: "Settings")
                 .frame(maxWidth: .infinity)
+
+            // MARK: - Блок выбора времени игры
+
             VStack {
                 HStack {
                     Text("время игры")
@@ -56,6 +65,8 @@ struct SettingsView: View {
             .shadow(radius: 2, x: -1, y: 3)
             .padding()
 
+            // MARK: - Блок выбора музыки и игрока
+
             VStack {
                 HStack {
                     Text("Фоновая музыка")
@@ -65,40 +76,144 @@ struct SettingsView: View {
 
                     Spacer()
 
-                    // посмотрите пожалуйста действие кнопки по выбору мелодии
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        HStack {
-                            Text("Мелодия 1")
-                                .foregroundColor(.white)
+                    // MARK: - Кнопка (меню) выбора мелодии
 
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.white)
+                    Menu {
+                        ForEach(Array(music.enumerated()), id: \.offset) { index, mus in
+                            Button(
+                                action: {
+                                    self.index = index
+                                    self.selection = mus
+                                },
+                                label: {
+                                    HStack {
+                                        Text(mus)
+                                        if selection == music[index] {
+                                            Image(systemName: "checkmark")
+                                        }
+                                    }
+                                })
                         }
-                    })
+                    } label: {
+                        HStack {
+                            Text(selection)
+                            Image(systemName: "chevron.right")
+
+                        }
+                        .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width / 6)
+                    }
                 }
                 .padding(12)
                 .frame(idealWidth: .infinity, maxHeight: 60)
                 .frame(maxWidth: .infinity)
                 .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .padding(EdgeInsets(top: 15, leading: 10, bottom: 8, trailing: 10))
+                .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
+
+                // MARK: - Секция выбора режима мультиплеера
 
                 HStack {
-                    // не понял задачу. куда ведет надатие на toggle?
                     Text("Игра с другом")
                         .font(.custom(.rubikMedium, size: 18))
                         .foregroundStyle(.white)
                     Toggle("", isOn: $vm.multiplayer)
-                    if playFriend {
-                        // появляется секция друга?
+                }
+                .padding(12)
+                .frame(idealWidth: .infinity, maxHeight: 60)
+                .background(.rpsPeachSettings)
+                .clipShape(.rect(cornerRadius: 20))
+                .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
+
+                // MARK: - Секция выбора Игрока 1
+
+                HStack {
+                    Text("Игрок 1")
+                        .font(.custom(.rubikMedium, size: 18))
+                        .foregroundStyle(.white)
+
+                    Spacer()
+
+                    HStack {
+                        Text(vm.currentPlayer1.name)
+                            .font(.custom(.rubikMedium, size: 20))
+                            .foregroundStyle(.secondary)
+
+                        Image(vm.currentPlayer1.avatar)
+                            .resizableToFit()
+                            .frame(width: 30, height: 30, alignment: .center)
+
+                        // MARK: - Кнопка (меню) выбора Игрока 1
+
+                        Menu {
+                            // FIXME: 1 - поправьте пожалуйста код для доступа к списку игроков
+                            //                            ForEach($players, id: \.name) { player in
+                            //                                Button(
+                            //                                    action: {
+                            //                                        //self.index = index
+                            //                                        self.selection = player.name
+                            //                                    },
+                            //                                    label: {
+                            //                                        HStack {
+                            //                                            Text(player.name)
+                            //                                            if selection == player[index] {
+                            //                                                Image(systemName: "checkmark")
+                            //                                            }
+                            //                                        }
+                            //                                    })
+                            //                            }
+                        } label: {
+                            HStack {
+                                Image(systemName: "chevron.right")
+                            }
+                            .foregroundColor(.white)
+                        }
                     }
                 }
                 .padding(12)
                 .frame(idealWidth: .infinity, maxHeight: 60)
                 .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .padding(EdgeInsets(top: 8, leading: 10, bottom: 15, trailing: 10))
+                .padding(vm.multiplayer ? EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10) : EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
 
+                // MARK: - Секция выбора Игрока 2
+
+                if vm.multiplayer {
+                    HStack {
+                        Text("Игрок 2")
+                            .font(.custom(.rubikMedium, size: 18))
+                            .foregroundStyle(.white)
+
+                        Spacer()
+
+                        HStack {
+                            Text(vm.currentPlayer2.name)
+                                .font(.custom(.rubikMedium, size: 20))
+                                .foregroundStyle(.secondary)
+
+                            Image(vm.currentPlayer2.avatar)
+                                .resizableToFit()
+                                .frame(width: 30, height: 30, alignment: .center)
+
+                            // MARK: - Кнопка (меню) выбора Игрока 2
+
+                            Menu {
+                                // FIXME: 2 - поправьте пожалуйста код для доступа к списку игроков
+                                // your code here
+                            } label: {
+                                HStack {
+                                    Image(systemName: "chevron.right")
+                                }
+                                .foregroundColor(.white)
+                            }
+                        }
+                    }
+                    .padding(12)
+                    .frame(idealWidth: .infinity, maxHeight: 60)
+                    .background(.rpsPeachSettings)
+                    .clipShape(.rect(cornerRadius: 20))
+                    .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
+                }
             }
             .padding(7)
             .background(.white)
