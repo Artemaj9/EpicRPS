@@ -134,6 +134,9 @@ struct MainView: View {
     }
     .onAppear {
         vm.resetGame()
+        if let player = SoundService.player.avPlayer {
+            player.stop()
+        }
     }
   }
 }

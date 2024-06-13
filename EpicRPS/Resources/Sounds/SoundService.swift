@@ -10,6 +10,7 @@ class SoundService {
     static let player = SoundService()
 
     var avPlayer: AVAudioPlayer!
+    var strokePlayer: AVPlayer!
     
     private init() {}
     

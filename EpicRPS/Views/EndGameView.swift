@@ -35,7 +35,10 @@ struct EndGameView: View {
                 Button {
                     vm.resetGame()
                     vm.gamePhase = .loading
-                      dismiss()
+                    if let  player =  SoundService.player.avPlayer {
+                        player.stop()
+                        dismiss()
+                    }
                 }label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 25)

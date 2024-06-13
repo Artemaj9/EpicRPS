@@ -25,6 +25,11 @@ struct GameView: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear {
+            if let audio = Sounds(rawValue: vm.backGroundMusic) {
+                SoundService.player.play(key: audio)
+            }
+        }
     }
 }
 

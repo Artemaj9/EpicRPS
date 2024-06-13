@@ -3,7 +3,7 @@ import Combine
 
 final class GameViewModel: ObservableObject {
     @AppStorage("gameTime") var gameTime: Double = 10
-    @AppStorage("backgroundMusic") var backGroundMusic = Sounds.bgPiano
+    @AppStorage("backgroundMusic") var backGroundMusic = Sounds.ambient.rawValue
     @AppStorage("multiplayer") var multiplayer = false
 
     @Published var size = CGSize(width: 430, height: 932)
@@ -89,7 +89,7 @@ final class GameViewModel: ObservableObject {
         case 2:
             player2Score += 1
         default:
-            performAction(after: 1) {
+            performAction(after: 0.4) {
                 self.isDraw = false
             }
         }
