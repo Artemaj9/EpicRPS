@@ -8,7 +8,7 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @StateObject var vm = GameViewModel()
+    @EnvironmentObject var vm: GameViewModel
 
     @State private var selectedGameTime: Int? = nil
     @State private var playFriend = false
@@ -27,19 +27,22 @@ struct SettingsView: View {
                 }
 
                 HStack {
-                    SettingsButton(text: "30 сек.") {
-                        selectedGameTime = 30
-                        vm.gameTime = 30
+                    SettingsButton(text: "10 сек.") {
+                        selectedGameTime = 10
+                        vm.gameTime = 10
                     }
+                    .hueRotation(Angle(degrees: vm.gameTime == 10 ?  75 : 0))
 
                     Spacer()
 
-                    SettingsButton(text: "60 сек.") {
-                        selectedGameTime = 60
-                        vm.gameTime = 60
+                    SettingsButton(text: "20 сек.") {
+                        selectedGameTime = 20
+                        vm.gameTime = 20
                     }
+                    .hueRotation(Angle(degrees: vm.gameTime == 20 ?  75 : 0))
                 }
                 .padding()
+                .animation(.smooth, value: vm.gameTime)
             }
             .padding(7)
             .background(.white)
@@ -116,4 +119,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(GameViewModel())
 }
