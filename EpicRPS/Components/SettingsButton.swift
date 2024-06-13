@@ -20,11 +20,11 @@ struct SettingsButton: View {
             Text(text)
                 .font(.custom(.rubikMedium, size: 20)).bold()
                 .foregroundStyle(.white)
-                .shadow(radius: 5)
-                .padding(12)
-                .frame(maxWidth: .infinity)
+                .shadow(radius: 3)
+                .padding(13)
+                .frame(width: 145)
                 .background(.rpsPeachSettings)
-                .clipShape(.rect(cornerRadius: 20))
+                .clipShape(.rect(cornerRadius: 18))
         }
     }
 }

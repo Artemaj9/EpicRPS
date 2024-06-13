@@ -81,7 +81,7 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity)
                 .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .padding(EdgeInsets(top: 10, leading: 8, bottom: 5, trailing: 8))
+                .padding(EdgeInsets(top: 15, leading: 10, bottom: 8, trailing: 10))
 
                 HStack {
                     // не понял задачу. куда ведет надатие на toggle?
@@ -97,7 +97,7 @@ struct SettingsView: View {
                 .frame(idealWidth: .infinity, maxHeight: 60)
                 .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .padding(EdgeInsets(top: 8, leading: 8, bottom: 10, trailing: 8))
+                .padding(EdgeInsets(top: 8, leading: 10, bottom: 15, trailing: 10))
 
             }
             .padding(7)
