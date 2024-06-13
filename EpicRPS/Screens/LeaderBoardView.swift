@@ -31,6 +31,7 @@ struct LeaderBoardView: View {
         }
     }
     @State private var showName = false
+    @State var showAvatar = false
     
     var body: some View {
         ZStack {
@@ -39,8 +40,12 @@ struct LeaderBoardView: View {
                 NavigationHeader(title: "Leaderboard")
                     .frame(maxWidth: .infinity)
                 HStack {
-                    Image(vm.currentPlayer1.avatar)
-                        .resizableToFit()
+                    Button {
+                        showAvatar.toggle()
+                    } label: {
+                        Image(vm.currentPlayer1.avatar)
+                            .resizableToFit()
+                    }
                     HStack{
                         Button {
                             showName.toggle()
@@ -131,15 +136,21 @@ struct LeaderBoardView: View {
                     
                 }
                 .animation(.easeInOut(duration: 1), value: showName)
+                .animation(.easeInOut(duration: 1), value: showAvatar)
                 
             }
-            .blur(radius: showName ? 5 : 0)
+            .blur(radius: showName || showAvatar ? 5 : 0)
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.rpsLightGray)
             .navigationBarHidden(true)
             if showName {
                 NameEditingView(check: $showName)
+                    .environmentObject(vm)
+                    .shadow(radius: 20)
+            }
+            if showAvatar {
+                AvatarSelectionView(check: $showAvatar)
                     .environmentObject(vm)
                     .shadow(radius: 20)
             }

@@ -109,7 +109,6 @@ struct AvatarSelectionView: View {
                 playerInd = ind
             }
         }
-        .background(.gray)
     }
 }
 

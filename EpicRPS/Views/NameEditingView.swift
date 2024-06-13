@@ -21,6 +21,7 @@ struct NameEditingView: View {
                 .foregroundStyle(.black)
                 .opacity(0.01)
                 .onTapGesture {
+                    UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
                     check.toggle()
                 }
             VStack {
