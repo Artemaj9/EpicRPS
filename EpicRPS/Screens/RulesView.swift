@@ -37,7 +37,7 @@ struct RulesView: View {
     private func customRule5Text() -> Text {
         let part1 = Text("За каждую победу игрок получает ")
 
-        let highlighted = Text("500 баллов,").foregroundColor(Color("rpsPurple"))
+        let highlighted = Text("500 баллов,").foregroundColor(.rpsDarkVioletText)
         
         let part2 = Text(" которые можно посмотреть на доске лидеров.")
         
@@ -57,6 +57,7 @@ struct RulesStyle: View {
                 
                 Text(number)
                     .font(.custom(.delaGothicOneRegular, size: 16))
+                    .offset(x: 0, y: -3)
             }
             textRule
                 .font(.custom(.rubikRegular, size: 16))
