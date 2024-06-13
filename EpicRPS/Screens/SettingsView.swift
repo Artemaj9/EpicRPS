@@ -20,7 +20,8 @@ struct SettingsView: View {
             VStack {
                 HStack {
                     Text("время игры")
-                        .font(.custom(.rubikRegular, size: 30))
+                        .font(.custom(.rubikRegular, size: 25))
+                        .opacity(0.7)
                         .textCase(.uppercase)
                         .padding([.leading, .top])
                     Spacer()
@@ -50,14 +51,15 @@ struct SettingsView: View {
             .clipShape(.rect(cornerRadius: 20))
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke()
+                    .stroke(lineWidth: 0.7)
                     .fill(.black.opacity(0.9)))
-            .shadow(radius: 20)
+            .shadow(radius: 2, x: -1, y: 3)
             .padding()
 
             VStack {
-                HStack(spacing: 15) {
+                HStack {
                     Text("Фоновая музыка")
+                        .lineLimit(1)
                         .font(.custom(.rubikMedium, size: 18))
                         .foregroundStyle(.white)
 
@@ -74,15 +76,14 @@ struct SettingsView: View {
                         }
                     })
                 }
-                .shadow(radius: 5)
                 .padding(12)
+                .frame(idealWidth: .infinity, maxHeight: 60)
                 .frame(maxWidth: .infinity)
-                .background(.rpsOrange)
+                .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .shadow(color: Color.rpsOrange.opacity(0.3), radius: 10, x: 0, y: 5)
-                .padding()
+                .padding(EdgeInsets(top: 10, leading: 8, bottom: 5, trailing: 8))
 
-                HStack(spacing: 15) {
+                HStack {
                     // не понял задачу. куда ведет надатие на toggle?
                     Text("Игра с другом")
                         .font(.custom(.rubikMedium, size: 18))
@@ -92,13 +93,11 @@ struct SettingsView: View {
                         // появляется секция друга?
                     }
                 }
-                .shadow(radius: 5)
                 .padding(12)
-                .frame(maxWidth: .infinity)
-                .background(.rpsOrange)
+                .frame(idealWidth: .infinity, maxHeight: 60)
+                .background(.rpsPeachSettings)
                 .clipShape(.rect(cornerRadius: 20))
-                .shadow(color: Color.rpsOrange.opacity(0.3), radius: 10, x: 0, y: 5)
-                .padding()
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 10, trailing: 8))
 
             }
             .padding(7)
@@ -107,9 +106,9 @@ struct SettingsView: View {
             .clipShape(.rect(cornerRadius: 20))
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke()
-                    .fill(.black.opacity(0.9)))
-            .shadow(radius: 20)
+                    .stroke(lineWidth: 0.7)
+                    .fill(.black))
+            .shadow(radius: 2, x: -1, y: 3)
             .padding()
             Spacer()
         }
