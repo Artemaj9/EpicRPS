@@ -18,3 +18,9 @@ enum CharacterAvatarImage {
     static let charAvatar8 = "character8"
 }
 
+enum MedalCellImage {
+    static let goldMedal = "Gold"
+    static let silverMedal = "Silver"
+    static let bronzeMedal = "Bronze"
+}
+
