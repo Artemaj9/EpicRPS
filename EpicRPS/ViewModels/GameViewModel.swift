@@ -22,7 +22,7 @@ final class GameViewModel: ObservableObject {
     @Published var secondPlayerTurn = false
     @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "avatarTest")
     @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "avatarTest")
-    @Published var allPlayers: [Player] = []
+    @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
 
     var cancellables = Set<AnyCancellable>()
 
