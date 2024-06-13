@@ -8,24 +8,23 @@
 import SwiftUI
 
 struct SettingsButton: View {
-
+    
     var text = "30 сек."
     var action: () -> Void
-
+    
     var body: some View {
-
+        
         Button {
             action()
         } label: {
             Text(text)
                 .font(.custom(.rubikMedium, size: 20)).bold()
                 .foregroundStyle(.white)
-                .shadow(radius: 5)
-                .padding(12)
-                .frame(maxWidth: .infinity)
-                .background(.rpsOrange)
-                .clipShape(.rect(cornerRadius: 20))
-                .shadow(color: Color.rpsOrange.opacity(0.3), radius: 10, x: 0, y: 5)
+                .shadow(radius: 3)
+                .padding(13)
+                .frame(width: 145)
+                .background(.rpsPeachSettings)
+                .clipShape(.rect(cornerRadius: 18))
         }
     }
 }
