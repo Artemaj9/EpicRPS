@@ -1,8 +1,8 @@
 //
-//  LeaderBoardCell.swift
+//  LeaderBoardElement.swift
 //  EpicRPS
 //
-//  Created by Daria on 12.06.2024.
+//  Created by Руслан on 13.06.2024.
 //
 
 import SwiftUI
@@ -11,65 +11,66 @@ struct LeaderBoardCell: View {
     var placeInRankin: Int
     var avatar: String
     var name: String
-    var result: Double
+    var result: Int
     var rate: Int
-    
-    var body: some View {
-        if placeInRankin == 1 || placeInRankin == 2 || placeInRankin == 3  {
-            TopCell(placeInRankin: placeInRankin, avatar: avatar, name: name, result: result, rate: rate)
-        } else {
-            DefaultCell(placeInRankin: placeInRankin, avatar: avatar, name: name, result: result, rate: rate)
-        }
+    var winnerCheck: Bool {
+        placeInRankin < 4
     }
-}
-
-struct LeaderBoardCell_Previews: PreviewProvider {
-    static var previews: some View {
-        LeaderBoardCell(placeInRankin: 3, avatar: "character2", name: "Tony Newman", result: 19.54, rate: 58)
-    }
-}
-
-struct TopCell: View {
-    var placeInRankin: Int
-    var avatar: String
-    var name: String
-    var result: Double
-    var rate: Int
-    #warning("Заменить цвета на точечный индекс")
     var body: some View {
-        ZStack(alignment: .leading) {
-            getBackgroundColor(for: placeInRankin)
-                .cornerRadius(20)
-                .opacity(placeInRankin == 1 ? 0.44 : 1)
-            HStack(spacing: 50) {
-                HStack(alignment: .center, spacing: 18) {
+        ZStack {
+            RoundedRectangle(cornerRadius: 22)
+                .foregroundStyle(getBackgroundColor())
+            HStack{
+                HStack {
+                    
                     Image(avatar)
                         .resizableToFit()
-                        .frame(width: 37, height: 37)
-                        .padding(.leading, 16)
+                        .frame(height: 37)
+                        .padding(.horizontal, 15)
                     Text(name)
-                        .foregroundColor(getForegroundColor(for: placeInRankin))
-                        .font(.custom(.rubikBold, size: 14))
+                        .font(.custom(.rubikMedium, size: 16))
+                        .foregroundStyle(getForegroundColor())
+                        .lineLimit(1)
+                    Spacer()
                 }
-                HStack(alignment: .center, spacing: 20) {
-                    Text(String(format: "%.3f", result))
-                        .foregroundColor(Color("rpsTextForCell"))
-                        .font(.custom(.rubikBold, size: 13))
-                    Text("\(rate)%")
-                        .foregroundColor(Color("rpsTextForCell"))
-                        .font(.custom(.rubikMedium, size: 18))
+                .overlay {
+                    if !winnerCheck {
+                        HStack {
+                            Text("\(placeInRankin)")
+                                .font(.custom(.rubikRegular, size: 10))
+                                .foregroundStyle(.rpsSecondTextForCell)
+                            Spacer()
+                        }
+                    }
+                }
+                HStack {
+                    Text("\(getPoints())")
+                        .font(.custom(.rubikBold, size: 16))
+                        .foregroundStyle(winnerCheck ? .rpsTextForCell : .rpsDefaultTextForCell)
+                    Spacer()
+                    Text("\(rate.description)%")
+                        .font(.custom(.rubikBold, size: 22))
+                }
+                .padding(.horizontal, 20)
+            }
+            if winnerCheck {
+                HStack{
+                    Spacer()
+                    Image(getMedal())
+                        .resizableToFit()
+                        .frame(height: 19)
+                        .offset(x:8)
                 }
             }
-            Image(getMedal(for: placeInRankin))
-                .resizable()
-                .frame(width: 19, height: 19)
-                .position(x: 338, y: 32.5)
         }
-        .frame(width: 339, height: 65)
+        
+        
+        .frame(height: winnerCheck ? 65 : 55)
+        .padding(.horizontal, 30)
+        
     }
-    
-    private func getBackgroundColor(for place: Int) -> Color {
-        switch place {
+    private func getBackgroundColor() -> Color {
+        switch placeInRankin {
         case 1:
             return Color("rpsFirstForCell")
         case 2:
@@ -81,8 +82,15 @@ struct TopCell: View {
         }
     }
     
-    private func getForegroundColor(for place: Int) -> Color {
-        switch place {
+    private func getPoints () -> String {
+        if result < 1000 {
+            return String(result)
+        }
+        let text = Double(result) / 1000
+        return String(format: "%.3f", text)
+    }
+    private func getForegroundColor() -> Color {
+        switch placeInRankin {
         case 1:
             return Color("rpsFirstTextForCell")
         case 2:
@@ -90,12 +98,12 @@ struct TopCell: View {
         case 3:
             return Color("rpsThirdTextForCell")
         default:
-            return Color.clear
+            return Color("rpsTextForCell")
         }
     }
     
-    private func getMedal(for place: Int) -> String {
-        switch place {
+    private func getMedal() -> String {
+        switch placeInRankin {
         case 1:
             return MedalCellImage.goldMedal
         case 2:
@@ -108,36 +116,6 @@ struct TopCell: View {
     }
 }
 
-
-struct DefaultCell: View {
-    var placeInRankin: Int
-    var avatar: String
-    var name: String
-    var result: Double
-    var rate: Int
-    
-    #warning("Заменить цвета на точечный индекс")
-    var body: some View {
-        HStack(spacing: 50) {
-            HStack(alignment: .center, spacing: 18) {
-                Text("\(placeInRankin)")
-                    .foregroundColor(Color("rpsDefaultTextForCell"))
-                    .font(.custom(.rubikBold, size: 9))
-                Image(avatar)
-                    .resizableToFit()
-                    .frame(width: 37, height: 37)
-                Text(name)
-                    .foregroundColor(Color("rpsDefaultTextForCell"))
-                    .font(.custom(.rubikBold, size: 14))
-            }
-            HStack(alignment: .center, spacing: 20) {
-                Text(String(format: "%.3f", result))
-                    .foregroundColor(Color("rpsDefaultTextForCell"))
-                    .font(.custom(.rubikBold, size: 13))
-                Text("\(rate)%")
-                    .foregroundColor(Color("rpsDefaultTextForCell"))
-                    .font(.custom(.rubikMedium, size: 18))
-            }
-        }
-    }
+#Preview {
+    LeaderBoardCell(placeInRankin: 4, avatar: "avatarTest", name: "Herman Welnchs", result: 20000, rate: 32)
 }
