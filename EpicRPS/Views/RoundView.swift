@@ -25,7 +25,9 @@ struct RoundView: View {
                         vm.isPaused.toggle()
                     },
                     leftButtonAction: {
-                        SoundService.player.avPlayer.stop()
+                        if let player = SoundService.player.avPlayer  {
+                            player.stop()
+                        }
                             vm.resetGame()
                             vm.gamePhase = .loading
                     }
