@@ -14,10 +14,9 @@ struct MainView: View {
     @EnvironmentObject var vm: GameViewModel
     
     var body: some View {
-        ZStack {
-            Color(.rpsLightGray).ignoresSafeArea()
-            
             NavigationView {
+                ZStack {
+                    Color(.rpsLightGray).ignoresSafeArea()
                 VStack {
                     HStack {
                         // Settings button
