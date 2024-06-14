@@ -35,6 +35,11 @@ struct RoundView: View {
                 // Верхняя картинка руки: female
                 Image(vm.femaleArm)
                     .resizableToFit()
+                
+                StrokeAnimation()
+                    .environmentObject(vm)
+                
+                
                
                 ZStack {
                     Text("FIGHT")
@@ -72,6 +77,7 @@ struct RoundView: View {
                     .environmentObject(vm)
                     .padding(10)
             }
+          
         }
         .overlay(alignment: .bottom) {
             GameButtons()

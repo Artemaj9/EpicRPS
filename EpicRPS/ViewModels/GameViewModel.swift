@@ -23,6 +23,9 @@ final class GameViewModel: ObservableObject {
     @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "avatarTest")
     @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "avatarTest")
     @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
+    
+    @Published var isStrokeAnimation = false
+    @Published var armsOffset:CGFloat = 0
 
     var cancellables = Set<AnyCancellable>()
 
@@ -45,6 +48,7 @@ final class GameViewModel: ObservableObject {
         if !multiplayer {
             player2Selection = Selection.random()
         }
+        isStrokeAnimation = false
         isPaused = false
         Timer.publish(every: 0.1, on: .main, in: .common)
             .autoconnect()
@@ -70,8 +74,10 @@ final class GameViewModel: ObservableObject {
             winner = player1Selection.rawValue == -1 ? 2 : 1
         } else {
             winner = (3 + player2Selection.rawValue - player1Selection.rawValue) % 3
-            // + здесь может быть любое полож число делящееся на 3, чтобы перевести выражение в положительную область
-            // остатки в swift могут быть отрицательные (не так как в матем)
+            if winner != 0 {
+                isStrokeAnimation = true
+                armsOffset = 30
+            }
         }
         updateScores()
         if max(player1Score, player2Score) == 3 {

@@ -54,6 +54,9 @@
 		ACEE7A922C1B07B700612622 /* uprising.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A912C1B07B700612622 /* uprising.mp3 */; };
 		ACEE7A942C1B083D00612622 /* dark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A932C1B083D00612622 /* dark.mp3 */; };
 		ACEE7A962C1B085200612622 /* ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A952C1B085200612622 /* ambient.mp3 */; };
+		ACEE7A9C2C1B8B0600612622 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE7A9B2C1B8B0600612622 /* Particle.swift */; };
+		ACEE7A9E2C1B8B3C00612622 /* ParticleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE7A9D2C1B8B3C00612622 /* ParticleEffect.swift */; };
+		ACEE7AA02C1B8BA300612622 /* StrokeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE7A9F2C1B8BA300612622 /* StrokeAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		ACEE7A912C1B07B700612622 /* uprising.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = uprising.mp3; sourceTree = "<group>"; };
 		ACEE7A932C1B083D00612622 /* dark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dark.mp3; sourceTree = "<group>"; };
 		ACEE7A952C1B085200612622 /* ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient.mp3; sourceTree = "<group>"; };
+		ACEE7A9B2C1B8B0600612622 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		ACEE7A9D2C1B8B3C00612622 /* ParticleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffect.swift; sourceTree = "<group>"; };
+		ACEE7A9F2C1B8BA300612622 /* StrokeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0E96B42C18B79200E7D29D /* ScaleView.swift */,
+				ACEE7A9D2C1B8B3C00612622 /* ParticleEffect.swift */,
 				AC00CDA62C1511E70085A617 /* BackgroundView.swift */,
 				AC340CFD2C18E878000A3B15 /* SettingsButton.swift */,
 				AC00CDA92C15127F0085A617 /* TimeProgressView.swift */,
@@ -207,6 +214,7 @@
 			children = (
 				AC00CDB02C1514820085A617 /* EndGameView.swift */,
 				AC00CDD52C152E170085A617 /* NameEditingView.swift */,
+				ACEE7A9F2C1B8BA300612622 /* StrokeAnimation.swift */,
 				AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */,
 				AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */,
 				AC00CDAE2C1514710085A617 /* RoundView.swift */,
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				AC00CDBD2C1518510085A617 /* PlayerModel.swift */,
+				ACEE7A9B2C1B8B0600612622 /* Particle.swift */,
 				AC340D092C1A1ABD000A3B15 /* Selection.swift */,
 				AC0E96AC2C18332D00E7D29D /* GameState.swift */,
 			);
@@ -396,6 +405,7 @@
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
 				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
+				ACEE7A9C2C1B8B0600612622 /* Particle.swift in Sources */,
 				AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */,
 				4EF3A8E72C19F5790002F882 /* LeaderBoardCell.swift in Sources */,
 				AC0E96B32C189F9A00E7D29D /* View+ext.swift in Sources */,
@@ -416,10 +426,12 @@
 				AC340D042C18F6EA000A3B15 /* FractalShader.metal in Sources */,
 				AC00CDD02C152ACB0085A617 /* RulesView.swift in Sources */,
 				AC340D022C18F6A1000A3B15 /* MetalView.swift in Sources */,
+				ACEE7AA02C1B8BA300612622 /* StrokeAnimation.swift in Sources */,
 				AC340CFC2C18E811000A3B15 /* ImageData.swift in Sources */,
 				AC00CDB42C1515210085A617 /* GameView.swift in Sources */,
 				AC5453942C176D9B003459D1 /* SoundService.swift in Sources */,
 				AC0E96AD2C18332D00E7D29D /* GameState.swift in Sources */,
+				ACEE7A9E2C1B8B3C00612622 /* ParticleEffect.swift in Sources */,
 				AC00CDB12C1514820085A617 /* EndGameView.swift in Sources */,
 				4E01746C2C18C28E005234F8 /* TextImage.swift in Sources */,
 				AC00CDC22C151B9C0085A617 /* SettingsView.swift in Sources */,
