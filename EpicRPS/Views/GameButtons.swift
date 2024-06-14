@@ -47,7 +47,7 @@ struct GameButtons: View {
     }
 
     private func handleSelection(_ selection: Selection) {
-        SoundService.player.play(key: .tap, isHit: true)
+        SoundService.player.strokePlayer.play()
         if !vm.multiplayer {
             vm.player1Selection = selection
             vm.isPaused = true
