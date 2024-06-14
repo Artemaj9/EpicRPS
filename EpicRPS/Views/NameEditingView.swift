@@ -6,7 +6,6 @@ import SwiftUI
 
 struct NameEditingView: View {
     @EnvironmentObject var vm: GameViewModel
-    @Environment (\.dismiss) var dismiss
     @State var name = "Player1"
     var checkBigLetters: Bool {
         name.count > 16
@@ -21,7 +20,6 @@ struct NameEditingView: View {
                 .foregroundStyle(.black)
                 .opacity(0.01)
                 .onTapGesture {
-                    UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
                     check.toggle()
                 }
             VStack {
@@ -46,7 +44,6 @@ struct NameEditingView: View {
                 Button {
                     vm.currentPlayer1.name = name
                     UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
-                    dismiss()
                     check.toggle()
                 }label: {
                     ZStack {
