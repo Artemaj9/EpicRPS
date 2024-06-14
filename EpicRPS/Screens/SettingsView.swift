@@ -9,6 +9,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var vm: GameViewModel
     @State var index = 0
+    @State var addNewPlayer = false
 
     var body: some View {
         VStack {
@@ -16,10 +17,38 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity)
 
             gameTimeSelection
-                .padding()
+                .padding(.horizontal)
 
             musicAndPlayerSelection
                 .padding()
+
+                VStack {
+                    HStack {
+                        Text("Новый игрок")
+                            .font(.custom(.rubikMedium, size: 18))
+                            .foregroundStyle(.white)
+
+                        Spacer()
+
+                        Button {
+                            addNewPlayer = true
+                        } label: {
+                            Image(systemName: "plus.circle")
+                                .resizableToFit()
+                                .foregroundStyle(.white)
+                                .frame(width: 30, height: 30)
+                                .padding(.trailing, 1)
+                        }
+                        .sheet(isPresented: $addNewPlayer) {
+                            NameEditingView(check: .constant(true))
+                            AvatarSelectionView(check: .constant(true))
+                        }
+                    }
+                    .hStackStyle()
+                    .padding(.bottom, 15)
+                }
+                .settingsStyle()
+                .padding(.horizontal)
 
             Spacer()
         }
@@ -167,33 +196,6 @@ struct SettingsView: View {
             Spacer()
         }
     }
-}
-
-// MARK: - add new player
-
-private func addNewPlayer() -> some View {
-    VStack {
-        HStack {
-            Text("Новый игрок")
-                .font(.custom(.rubikMedium, size: 18))
-                .foregroundStyle(.white)
-
-            Spacer()
-
-            Button {
-            } label: {
-                Image(systemName: "plus.circle")
-                    .resizableToFit()
-                    .foregroundStyle(.white)
-                    .frame(width: 30, height: 30)
-                    .padding(.trailing, 1)
-            }
-        }
-        .hStackStyle()
-    }
-    .padding(.bottom, 15)
-    .settingsStyle()
-
 }
 
 private extension View {
