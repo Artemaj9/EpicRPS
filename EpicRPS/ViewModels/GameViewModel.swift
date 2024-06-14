@@ -23,8 +23,13 @@ final class GameViewModel: ObservableObject {
     @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "avatarTest")
     @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "avatarTest")
     @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
-
+    
+    @Published var isStrokeAnimation = false
+    @Published var armsOffset:CGFloat = 0
+    @Published var strokeTime: Double = 0
+    var timer: AnyCancellable?
     var cancellables = Set<AnyCancellable>()
+    var isCrashed = false
 
     func startRound() {
         if !multiplayer {
@@ -36,15 +41,37 @@ final class GameViewModel: ObservableObject {
     func startArmAnimation() {
         updateArms()
         isDraw = player1Selection == player2Selection
-        performAction(after: 2) {
+        if !isDraw {
+            setupStrokeTimer()
+        }
+        performAction(after: 1.5) {
             self.resetTimer()
         }
+    }
+    
+    
+    func setupStrokeTimer() {
+        timer = Timer.publish(every: 0.1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [unowned self] _ in
+                    strokeTime += 0.1
+                if strokeTime >= 0.7 && !isCrashed {
+                    SoundService.player.play(key: .crash, isHit: true)
+                    isCrashed = true
+                }
+                if strokeTime >= 1.5 {
+                    timer?.cancel()
+                    strokeTime = 0
+                    isCrashed = false
+                }
+            }
     }
 
     func setupTimer() {
         if !multiplayer {
             player2Selection = Selection.random()
         }
+        isStrokeAnimation = false
         isPaused = false
         Timer.publish(every: 0.1, on: .main, in: .common)
             .autoconnect()
@@ -70,8 +97,6 @@ final class GameViewModel: ObservableObject {
             winner = player1Selection.rawValue == -1 ? 2 : 1
         } else {
             winner = (3 + player2Selection.rawValue - player1Selection.rawValue) % 3
-            // + здесь может быть любое полож число делящееся на 3, чтобы перевести выражение в положительную область
-            // остатки в swift могут быть отрицательные (не так как в матем)
         }
         updateScores()
         if max(player1Score, player2Score) == 3 {
