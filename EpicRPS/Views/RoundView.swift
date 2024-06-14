@@ -35,11 +35,12 @@ struct RoundView: View {
                 // Верхняя картинка руки: female
                 Image(vm.femaleArm)
                     .resizableToFit()
-                    .frame(height: vm.size.height*0.4)
                     .offset(y: 40 * vm.strokeTime)
                 
                 CustomAnimation()
                     .environmentObject(vm)
+                    .blur(radius: 2)
+                    .offset(y: vm.size.height*0.05)
                 
                 
                
@@ -65,7 +66,6 @@ struct RoundView: View {
                 // Нижняя картинка руки: male
                 Image(vm.maleArm)
                     .resizableToFit()
-                    .frame(height: vm.size.height*0.4)
                     .offset(y: -40 * vm.strokeTime)
             }
             .animation(.easeOut, value: vm.strokeTime)

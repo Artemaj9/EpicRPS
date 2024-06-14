@@ -51,6 +51,7 @@ final class GameViewModel: ObservableObject {
     
     
     func setupStrokeTimer() {
+        let player = SoundService.player.strokePlayer.prepareToPlay()
         timer = Timer.publish(every: 0.1, on: .main, in: .common)
             .autoconnect()
             .sink { [unowned self] _ in
@@ -59,7 +60,7 @@ final class GameViewModel: ObservableObject {
                     SoundService.player.play(key: .crash, isHit: true)
                     isCrashed = true
                 }
-                if strokeTime >= 1.5 {
+                if strokeTime >= 1.2 {
                     timer?.cancel()
                     strokeTime = 0
                     isCrashed = false
