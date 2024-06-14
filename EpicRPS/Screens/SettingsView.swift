@@ -12,6 +12,7 @@ struct SettingsView: View {
     @State var addNewPlayer = false
 
     var body: some View {
+
         VStack {
             NavigationHeader(title: "Settings")
                 .frame(maxWidth: .infinity)
@@ -22,6 +23,7 @@ struct SettingsView: View {
             musicAndPlayerSelection
                 .padding()
 
+            // добавление нового игрока
                 VStack {
                     HStack {
                         Text("Новый игрок")
@@ -40,8 +42,7 @@ struct SettingsView: View {
                                 .padding(.trailing, 1)
                         }
                         .sheet(isPresented: $addNewPlayer) {
-                            NameEditingView(check: .constant(true))
-                            AvatarSelectionView(check: .constant(true))
+                            NewPlayerView(check: .constant(true))
                         }
                     }
                     .hStackStyle()
