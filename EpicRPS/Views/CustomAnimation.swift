@@ -7,14 +7,15 @@ import SwiftUI
 struct CustomAnimation: View {
     
     @EnvironmentObject var vm: GameViewModel
+    private let total = 50
     
     var body: some View {
         ZStack {
-            ForEach(0..<100, id: \.self) { index in
-                let total: CGFloat = 100
+            ForEach(0..<total, id: \.self) { index in
+                let total: CGFloat = CGFloat(total)
                 let progress = CGFloat(index) / total
                 let maxX: CGFloat = (progress > 0.5) ? 250 : -250
-                let maxY: CGFloat = (progress > 0.5) ? 150 : -150
+                let maxY: CGFloat = (progress > 0.5) ? 250 : -250
                 
                 let randomX = calculateRandomX(progress: progress, maxX: maxX)
                 let randomY = calculateRandomY(progress: progress, maxY: maxY)
@@ -24,11 +25,10 @@ struct CustomAnimation: View {
                 Image(systemName: "star.fill")
                     .foregroundStyle(.red)
                     .scaleEffect(calculateScaleEffect(vm.strokeTime))
-                    .offset(x: (randomX + extraRandomX) * 0.8 * min(2, max(0, vm.strokeTime - 0.5)),
-                            y: (randomY + extraRandomY) * 0.8 * min(2, max(0, vm.strokeTime - 0.5)))
+                    .offset(x: (randomX + extraRandomX) * 0.8 * min(2, max(0, vm.strokeTime - 0.8)),
+                            y: (randomY + extraRandomY) * 0.8 * min(2, max(0, vm.strokeTime - 0.8)))
                     .opacity(calculateOpacity(vm.strokeTime))
-                    .saturation(Double.random(in: 0.5...2))
-                    .animation(.linear, value: vm.strokeTime)
+                    .animation(.easeInOut, value: vm.strokeTime)
             }
         }
     }
@@ -42,10 +42,10 @@ struct CustomAnimation: View {
     }
     
     private func calculateScaleEffect(_ strokeTime: CGFloat) -> CGFloat {
-        return max(strokeTime - 0.5, 0) == 0 ? 0.001 : 0.3
+        return max(strokeTime - 0.5, 0) == 0 ? 0.001 : 1
     }
     
     private func calculateOpacity(_ strokeTime: CGFloat) -> Double {
-        return strokeTime == 0 || strokeTime > 1.4 ? 0 : 1
+        return strokeTime == 0 || strokeTime > 1.4 ? 0 : min(1.4-strokeTime,1)
     }
 }

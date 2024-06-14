@@ -35,12 +35,14 @@ struct RoundView: View {
                 // Верхняя картинка руки: female
                 Image(vm.femaleArm)
                     .resizableToFit()
-                    .offset(y: 40 * vm.strokeTime)
+                    .offset(y: vm.strokeTime < 1 ? 40 * vm.strokeTime : 40)
                 
                 CustomAnimation()
                     .environmentObject(vm)
-                    .blur(radius: 2)
+                    .opacity(vm.strokeTime <= 0.7 ? 0 : (vm.strokeTime - 0.7)/0.8)
+                   // .blur(radius: 2)
                     .offset(y: vm.size.height*0.05)
+                    .animation(.easeInOut, value: vm.strokeTime)
                 
                 
                
@@ -51,7 +53,7 @@ struct RoundView: View {
                         .textCase(.uppercase)
                         .foregroundStyle(.rpsOrange)
                         .padding()
-                        .opacity(vm.time < 1 && !vm.isDraw && max(vm.player1Score, vm.player2Score) < 3 ? 1 : 0)
+                        .opacity(vm.time < 1 && !vm.isDraw && max(vm.player1Score, vm.player2Score) < 3 && vm.player1Selection == .notSelect ? 1 : 0)
                     
                     Text("DRAW")
                         .font(.custom(.rubikMedium, size: 56))
@@ -66,7 +68,7 @@ struct RoundView: View {
                 // Нижняя картинка руки: male
                 Image(vm.maleArm)
                     .resizableToFit()
-                    .offset(y: -40 * vm.strokeTime)
+                    .offset(y: vm.strokeTime < 1 ? -40 * vm.strokeTime : -40)
             }
             .animation(.easeOut, value: vm.strokeTime)
             
@@ -86,9 +88,12 @@ struct RoundView: View {
         }
         .overlay(alignment: .bottom) {
             GameButtons()
+                .environmentObject(vm)
         }
         .onAppear {
             vm.setupTimer()
+            SoundService.player.preloadAudio(file: "tap")
+            SoundService.player.preloadAudio(file: "crash", isStroke: false)
         }
         .preferredColorScheme(.dark)
     }
