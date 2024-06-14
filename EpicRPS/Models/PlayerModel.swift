@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Player: Codable, Equatable {
+struct Player: Codable, Equatable, Comparable {
     var name: String
     var games: Int = 0
     var wins: Int = 0
@@ -12,5 +12,9 @@ struct Player: Codable, Equatable {
     
     static func ==(lhs: Player, rhs: Player) -> Bool {
         return lhs.name == rhs.name
+    }
+    
+    static func <(lhs: Player, rhs: Player) -> Bool {
+        return lhs.wins < rhs.wins
     }
 }

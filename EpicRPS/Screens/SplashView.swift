@@ -34,6 +34,19 @@ struct SplashView: View {
             opacity = 0
             saturation = 1
             textOpacity = 1
+            
+//           Clean up and reset UserDefaults
+//            UserDefaultsService.shared.removeData(forKey: "allPlayers")
+//            vm.allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? [Player(name: "Computer", avatar: "avatarTest"), Player(name: "Player1", avatar: "character2")]
+//            print(vm.allPlayers.count)
+//            UserDefaultsService.shared.removeData(forKey: "currentPlayer1")
+//            UserDefaultsService.shared.removeData(forKey: "currentPlayer2")
+//            vm.currentPlayer1 = Player(name: "Player1", avatar: "character2")
+
+            if !vm.multiplayer {
+                vm.currentPlayer2 = vm.allPlayers.first(where: {$0.name == "Computer"}) ?? Player(name: "Computer", avatar: "avatarTest")
+            }
+            vm.addCurrentPlayers()
         }
     }
 

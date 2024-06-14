@@ -169,7 +169,6 @@ struct SettingsView: View {
                         }) {
                             HStack {
                                 Text(player.name.capitalized)
-                                // Show checkmark only if this player is currently selected in this context
                                 if (label == "Игрок 1" && vm.currentPlayer1 == player) ||
                                    (label == "Игрок 2" && vm.currentPlayer2 == player) {
                                     Image(systemName: "checkmark")

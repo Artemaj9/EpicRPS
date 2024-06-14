@@ -51,6 +51,7 @@
 		AC54538B2C1754AA003459D1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */; };
 		AC5453942C176D9B003459D1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453932C176D9B003459D1 /* SoundService.swift */; };
 		AC5453962C176DD9003459D1 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5453952C176DD9003459D1 /* Sounds.swift */; };
+		AC803B362C1CA87000C374F4 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC803B352C1CA87000C374F4 /* NewPlayerView.swift */; };
 		ACEE7A922C1B07B700612622 /* uprising.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A912C1B07B700612622 /* uprising.mp3 */; };
 		ACEE7A942C1B083D00612622 /* dark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A932C1B083D00612622 /* dark.mp3 */; };
 		ACEE7A962C1B085200612622 /* ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACEE7A952C1B085200612622 /* ambient.mp3 */; };
@@ -106,6 +107,7 @@
 		AC54538A2C1754AA003459D1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AC5453932C176D9B003459D1 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		AC5453952C176DD9003459D1 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		AC803B352C1CA87000C374F4 /* NewPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		ACEE7A912C1B07B700612622 /* uprising.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = uprising.mp3; sourceTree = "<group>"; };
 		ACEE7A932C1B083D00612622 /* dark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dark.mp3; sourceTree = "<group>"; };
 		ACEE7A952C1B085200612622 /* ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambient.mp3; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				AC00CDB02C1514820085A617 /* EndGameView.swift */,
 				AC00CDD52C152E170085A617 /* NameEditingView.swift */,
 				ACEE7AA12C1C267500612622 /* CustomAnimation.swift */,
+				AC803B352C1CA87000C374F4 /* NewPlayerView.swift */,
 				AC00CDD32C152DD80085A617 /* AvatarSelectionView.swift */,
 				AC00CDAC2C1514350085A617 /* FightLoadScreen.swift */,
 				AC00CDAE2C1514710085A617 /* RoundView.swift */,
@@ -406,6 +409,7 @@
 				AC340D082C1A1972000A3B15 /* TimerHelper.swift in Sources */,
 				AC00CDBE2C1518510085A617 /* PlayerModel.swift in Sources */,
 				AC00CDB62C1515370085A617 /* MainView.swift in Sources */,
+				AC803B362C1CA87000C374F4 /* NewPlayerView.swift in Sources */,
 				AC00CDAF2C1514710085A617 /* RoundView.swift in Sources */,
 				AC340CFE2C18E878000A3B15 /* SettingsButton.swift in Sources */,
 				4EF3A8E72C19F5790002F882 /* LeaderBoardCell.swift in Sources */,

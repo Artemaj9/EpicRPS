@@ -42,10 +42,14 @@ struct NameEditingView: View {
                     }
                 Spacer()
                 Button {
+                       if let ind = vm.allPlayers.firstIndex(where: { $0.name == vm.currentPlayer1.name}) {
+                            vm.allPlayers[ind].name = name
+                        }
                     vm.currentPlayer1.name = name
                     UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
+                    vm.addCurrentPlayers()
                     check.toggle()
-                }label: {
+                } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.rpsShadowPeach)
@@ -64,6 +68,9 @@ struct NameEditingView: View {
             .frame(width: 314, height: 196)
             .animation(.easeInOut, value: checkLetters)
             .animation(.easeInOut, value: checkBigLetters)
+            .onAppear {
+                name = vm.currentPlayer1.name
+            }
         }
     }
 }

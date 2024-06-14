@@ -85,6 +85,7 @@ struct AvatarSelectionView: View {
                 Button {
                     vm.currentPlayer1.avatar = "character\(playerInd)"
                     UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
+                    vm.addCurrentPlayers()
                     check.toggle()
                 }label: {
                     ZStack {
