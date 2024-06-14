@@ -21,9 +21,6 @@ struct SettingsView: View {
             musicAndPlayerSelection
                 .padding()
 
-            addNewPlayer()
-                .padding()
-
             Spacer()
         }
         .animation(.easeInOut, value: vm.multiplayer)
@@ -144,7 +141,7 @@ struct SettingsView: View {
                                 Text(player.name.capitalized)
                                 // Show checkmark only if this player is currently selected in this context
                                 if (label == "Игрок 1" && vm.currentPlayer1 == player) ||
-                                    (label == "Игрок 2" && vm.currentPlayer2 == player) {
+                                   (label == "Игрок 2" && vm.currentPlayer2 == player) {
                                     Image(systemName: "checkmark")
                                 }
                             }
