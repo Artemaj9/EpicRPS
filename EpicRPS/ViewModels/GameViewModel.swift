@@ -26,6 +26,13 @@ final class GameViewModel: ObservableObject {
 
     var cancellables = Set<AnyCancellable>()
 
+    // новый игрок
+    func addNewPlayer(name: String, avatar: String) {
+            let newPlayer = Player(name: name, avatar: avatar)
+            allPlayers.append(newPlayer)
+            savePlayerStats()
+        }
+
     func startRound() {
         if !multiplayer {
             player2Selection = Selection.random()
