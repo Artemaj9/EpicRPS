@@ -20,22 +20,29 @@ final class GameViewModel: ObservableObject {
     @Published var maleArm: String = MaleArms.maleO
     @Published var isDraw = false
     @Published var secondPlayerTurn = false
-    @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "avatarTest")
-    @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "avatarTest")
-    @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
+    @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "character2")
+    @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "charcter8")
+    @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? [Player(name: "Computer", avatar: "avatarTest"), Player(name: "Player1", avatar: "character2")]
     
     @Published var isStrokeAnimation = false
     @Published var armsOffset:CGFloat = 0
     @Published var strokeTime: Double = 0
+    
     var timer: AnyCancellable?
     var cancellables = Set<AnyCancellable>()
     var isCrashed = false
 
+    
+    func addCurrentPlayers() {
+        savePlayerStats()
+        allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
+    }
     // новый игрок
     func addNewPlayer(name: String, avatar: String) {
             let newPlayer = Player(name: name, avatar: avatar)
             allPlayers.append(newPlayer)
             savePlayerStats()
+            allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
         }
 
     func startRound() {

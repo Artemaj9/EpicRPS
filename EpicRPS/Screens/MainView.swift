@@ -15,6 +15,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
+            Color(.rpsLightGray).ignoresSafeArea()
             
             NavigationView {
                 VStack {
@@ -129,8 +130,9 @@ struct MainView: View {
                     .animation(.easeIn(duration: 0.5).delay(1), value: opacity)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(BackgroundView(gradientColor1: .white, gradientColor2: .rpsLightPeach).opacity(0.2))
+//                .background(BackgroundView(gradientColor1: .rpsLightGray, gradientColor2: .rpsLightPeach).opacity(0.2))
                 .onAppear {
+                    vm.gamePhase = .loading
                     firstAnim = true
                     opacity = 1
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
