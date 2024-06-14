@@ -35,8 +35,10 @@ struct RoundView: View {
                 // Верхняя картинка руки: female
                 Image(vm.femaleArm)
                     .resizableToFit()
+                    .frame(height: vm.size.height*0.4)
+                    .offset(y: 40 * vm.strokeTime)
                 
-                StrokeAnimation()
+                CustomAnimation()
                     .environmentObject(vm)
                 
                 
@@ -63,7 +65,10 @@ struct RoundView: View {
                 // Нижняя картинка руки: male
                 Image(vm.maleArm)
                     .resizableToFit()
+                    .frame(height: vm.size.height*0.4)
+                    .offset(y: -40 * vm.strokeTime)
             }
+            .animation(.easeOut, value: vm.strokeTime)
             
             HStack {
                 TimeProgress()

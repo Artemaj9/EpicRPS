@@ -47,6 +47,7 @@ struct GameButtons: View {
     }
 
     private func handleSelection(_ selection: Selection) {
+        SoundService.player.play(key: .tap, isHit: true)
         if !vm.multiplayer {
             vm.player1Selection = selection
             vm.isPaused = true
@@ -68,6 +69,7 @@ struct GameButtons: View {
             vm.secondPlayerTurn = true
             vm.time = 0
             vm.isPaused = false
+            SoundService.player.play(key: .tap, isHit: true)
         } label: {
             Image("select")
                 .resizable()

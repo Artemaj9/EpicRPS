@@ -26,8 +26,10 @@ final class GameViewModel: ObservableObject {
     
     @Published var isStrokeAnimation = false
     @Published var armsOffset:CGFloat = 0
-
+    @Published var strokeTime: Double = 0
+    var timer: AnyCancellable?
     var cancellables = Set<AnyCancellable>()
+    var isCrashed = false
 
     func startRound() {
         if !multiplayer {
@@ -39,9 +41,30 @@ final class GameViewModel: ObservableObject {
     func startArmAnimation() {
         updateArms()
         isDraw = player1Selection == player2Selection
-        performAction(after: 2) {
+        if !isDraw {
+            setupStrokeTimer()
+        }
+        performAction(after: 1.5) {
             self.resetTimer()
         }
+    }
+    
+    
+    func setupStrokeTimer() {
+        timer = Timer.publish(every: 0.1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [unowned self] _ in
+                    strokeTime += 0.1
+                if strokeTime >= 0.7 && !isCrashed {
+                    SoundService.player.play(key: .crash, isHit: true)
+                    isCrashed = true
+                }
+                if strokeTime >= 1.5 {
+                    timer?.cancel()
+                    strokeTime = 0
+                    isCrashed = false
+                }
+            }
     }
 
     func setupTimer() {
@@ -74,10 +97,6 @@ final class GameViewModel: ObservableObject {
             winner = player1Selection.rawValue == -1 ? 2 : 1
         } else {
             winner = (3 + player2Selection.rawValue - player1Selection.rawValue) % 3
-            if winner != 0 {
-                isStrokeAnimation = true
-                armsOffset = 30
-            }
         }
         updateScores()
         if max(player1Score, player2Score) == 3 {
