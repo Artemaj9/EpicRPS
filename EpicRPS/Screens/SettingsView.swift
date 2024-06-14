@@ -9,36 +9,39 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var vm: GameViewModel
     @State var index = 0
-    
+
     var body: some View {
         VStack {
             NavigationHeader(title: "Settings")
                 .frame(maxWidth: .infinity)
-            
+
             gameTimeSelection
                 .padding()
 
             musicAndPlayerSelection
                 .padding()
-            
+
+            addNewPlayer()
+                .padding()
+
             Spacer()
         }
         .animation(.easeInOut, value: vm.multiplayer)
         .navigationBarHidden(true)
     }
-    
+
     private var gameTimeSelection: some View {
         VStack {
             sectionHeader(text: "время игры")
-            
+
             HStack {
                 SettingsButton(text: "10 сек.") {
                     vm.gameTime = 10
                 }
                 .hueRotation(Angle(degrees: vm.gameTime == 10 ? 75 : 0))
-                
+
                 Spacer()
-                
+
                 SettingsButton(text: "20 сек.") {
                     vm.gameTime = 20
                 }
@@ -49,7 +52,7 @@ struct SettingsView: View {
         }
         .settingsStyle()
     }
-    
+
     private var musicAndPlayerSelection: some View {
         VStack {
             musicSelection
@@ -69,16 +72,16 @@ struct SettingsView: View {
         }
         .settingsStyle()
     }
-    
+
     private var musicSelection: some View {
         HStack {
             Text("Фоновая музыка")
                 .lineLimit(1)
                 .font(.custom(.rubikMedium, size: 18))
                 .foregroundStyle(.white)
-            
+
             Spacer()
-            
+
             Menu {
                 ForEach(Array(bgMusic.enumerated()), id: \.offset) { index, mus in
                     Button(action: {
@@ -102,14 +105,9 @@ struct SettingsView: View {
                 .frame(width: vm.size.width / 3, alignment: .leading)
             }
         }
-        .padding(12)
-        .frame(maxHeight: 60)
-        .background(.rpsPeachSettings)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .padding(.horizontal, 10)
-        .padding(.top, 15)
+        .hStackStyle()
     }
-    
+
     private var multiplayerToggle: some View {
         HStack {
             Text("Игра с другом")
@@ -117,31 +115,26 @@ struct SettingsView: View {
                 .foregroundStyle(.white)
             Toggle("", isOn: $vm.multiplayer)
         }
-        .padding(12)
-        .frame(maxHeight: 60)
-        .background(.rpsPeachSettings)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .padding(.horizontal, 10)
-        .padding(.top, 15)
+        .hStackStyle()
     }
-    
+
     private func playerSelection(player: Player, label: String, action: @escaping (Player) -> Void) -> some View {
         HStack {
             Text(label)
                 .font(.custom(.rubikMedium, size: 18))
                 .foregroundStyle(.white)
-            
+
             Spacer()
-            
+
             HStack {
                 Text(player.name)
                     .font(.custom(.rubikMedium, size: 20))
                     .foregroundStyle(.secondary)
-                
+
                 Image(player.avatar)
                     .resizableToFit()
                     .frame(width: 30, height: 30)
-                
+
                 Menu {
                     ForEach(Array(vm.allPlayers.enumerated()), id: \.offset) { index, player in
                         Button(action: {
@@ -151,7 +144,7 @@ struct SettingsView: View {
                                 Text(player.name.capitalized)
                                 // Show checkmark only if this player is currently selected in this context
                                 if (label == "Игрок 1" && vm.currentPlayer1 == player) ||
-                                   (label == "Игрок 2" && vm.currentPlayer2 == player) {
+                                    (label == "Игрок 2" && vm.currentPlayer2 == player) {
                                     Image(systemName: "checkmark")
                                 }
                             }
@@ -163,15 +156,10 @@ struct SettingsView: View {
                 }
             }
         }
-        .padding(12)
-        .frame(maxHeight: 60)
-        .background(.rpsPeachSettings)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .padding(.horizontal, 10)
-        .padding(.top, 15)
+        .hStackStyle()
         .padding(.bottom, vm.multiplayer ? 0 : 15)
     }
-    
+
     private func sectionHeader(text: String) -> some View {
         HStack {
             Text(text)
@@ -182,6 +170,33 @@ struct SettingsView: View {
             Spacer()
         }
     }
+}
+
+// MARK: - add new player
+
+private func addNewPlayer() -> some View {
+    VStack {
+        HStack {
+            Text("Новый игрок")
+                .font(.custom(.rubikMedium, size: 18))
+                .foregroundStyle(.white)
+
+            Spacer()
+
+            Button {
+            } label: {
+                Image(systemName: "plus.circle")
+                    .resizableToFit()
+                    .foregroundStyle(.white)
+                    .frame(width: 30, height: 30)
+                    .padding(.trailing, 1)
+            }
+        }
+        .hStackStyle()
+    }
+    .padding(.bottom, 15)
+    .settingsStyle()
+
 }
 
 private extension View {
@@ -196,6 +211,18 @@ private extension View {
                     .stroke(lineWidth: 0.7)
                     .fill(.black.opacity(0.9)))
             .shadow(radius: 2, x: -1, y: 3)
+    }
+}
+
+private extension View {
+    func hStackStyle() -> some View {
+        self
+            .padding(12)
+            .frame(maxHeight: 60)
+            .background(.rpsPeachSettings)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(.horizontal, 10)
+            .padding(.top, 15)
     }
 }
 
