@@ -12,8 +12,8 @@ struct LeaderBoardView: View {
         }
     }
     
-    var playersTest = [Player(name: "Andrei", games: 3002, wins: 21, avatar: "avatarTest"),
-                       Player(name: "Masha", games: 302, wins: 11, avatar: "avatarTest"),
+    var playersTest = [Player(name: "Andrei", games: 3002, wins: 121, avatar: "avatarTest"),
+                       Player(name: "Masha", games: 100, wins: 55, avatar: "avatarTest"),
                        Player(name: "Kate", games: 342, wins: 21, avatar: "avatarTest"),
                        Player(name: "Irina", games: 102, wins: 31, avatar: "avatarTest"),
                        Player(name: "Matew", games: 402, wins: 41, avatar: "avatarTest"),
@@ -102,10 +102,11 @@ struct LeaderBoardView: View {
                                 Text("Очки")
                                     .font(.custom(.rubikMedium, size: 15))
                                     .foregroundStyle(.rpsDefaultTextForCell)
-                                Spacer()
+                                    .padding(.horizontal, 15)
                                 Text("Рейтинг")
                                     .font(.custom(.rubikMedium, size: 15))
                                     .foregroundStyle(.rpsDefaultTextForCell)
+                                    .padding(.horizontal, 5)
                             }
                         }
                         .padding(.horizontal, 35)
@@ -117,9 +118,9 @@ struct LeaderBoardView: View {
                         
                         ForEach (players2.count == 0 ? players.indices: players2.indices) { ind in
                             let player = players[ind]
-                            let points = players[ind].wins * 500
-                            let rate = players[ind].wins
-                            LeaderBoardCell(placeInRankin: ( ind + 1 ), avatar: player.avatar, name: player.name, result: points, rate: rate)
+                            let points = player.wins * 500
+                            let rate =  Double(player.wins) / (Double(player.games) / 100 )
+                            LeaderBoardCell(placeInRankin: ( ind + 1 ), avatar: player.avatar, name: player.name, result: points, rate: Int(rate))
                             
                             if ind > 3 {
                                 VStack{
@@ -148,11 +149,13 @@ struct LeaderBoardView: View {
                 NameEditingView(check: $showName)
                     .environmentObject(vm)
                     .shadow(radius: 20)
+                    .transition(.scale)
             }
             if showAvatar {
                 AvatarSelectionView(check: $showAvatar)
                     .environmentObject(vm)
                     .shadow(radius: 20)
+                    .transition(.scale)
             }
                 
         }
