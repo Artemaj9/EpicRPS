@@ -43,10 +43,11 @@ final class GameViewModel: ObservableObject {
             let newPlayer = Player(name: name, avatar: avatar)
             
             allPlayers.append(newPlayer)
+            currentPlayer1 = newPlayer
             savePlayerStats()
             allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
         }
-        }
+    }
 
     func startRound() {
         if !multiplayer {

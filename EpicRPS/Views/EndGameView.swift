@@ -94,7 +94,7 @@ struct EndGameView: View {
                 }(),
                 center: .center,
                 startRadius: 1,
-                endRadius: 320
+                endRadius: 720
             )
         )
     }

@@ -9,6 +9,10 @@ import SwiftUI
 
 struct GameButtons: View {
     @EnvironmentObject var vm: GameViewModel
+    private var selectionFlag: Bool  {
+        vm.player1Selection != .notSelect && !vm.secondPlayerTurn
+    }
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -72,10 +76,13 @@ struct GameButtons: View {
             vm.isPaused = false
             SoundService.player.play(key: .tap, isHit: true)
         } label: {
-            Image("select")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 80, maxHeight: 80)
+                Image("select")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 80, maxHeight: 80)
+                    .scaleEffect(selectionFlag
+                                 ? 1.4 : 1)
+                    .animation(.smooth, value: vm.player1Selection)
         }
         .disabled(vm.secondPlayerTurn || vm.player1Selection == .notSelect)
     }

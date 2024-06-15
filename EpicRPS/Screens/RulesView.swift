@@ -30,7 +30,7 @@ struct RulesView: View {
                     Spacer()
                     Spacer()
                 }
-                .padding(.leading, 27)
+                .padding(.horizontal, 20)
                 .padding(.top, 23)
             }
             .navigationBarHidden(true)

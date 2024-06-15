@@ -201,6 +201,7 @@ struct SettingsView: View {
         }
         .hStackStyle()
         .padding(.bottom, vm.multiplayer ? 0 : 15)
+        .padding(.bottom, label == "Игрок 2" ? 15 : 0)
     }
 
     private func sectionHeader(text: String) -> some View {

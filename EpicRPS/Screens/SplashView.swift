@@ -17,7 +17,7 @@ struct SplashView: View {
         ZStack {
             Color.white.ignoresSafeArea()
                 .readSize($vm.size)
-            
+        
             MetalView()
                 .scaleEffect(5)
                 .offset(x: 1.5*vm.size.width, y: -vm.size.height)
@@ -49,14 +49,12 @@ struct SplashView: View {
             vm.addCurrentPlayers()
         }
     }
-
 }
 
 #Preview {
     SplashView()
         .environmentObject(GameViewModel())
 }
-
 
 extension View {
     func invertMask<Mask: View>(_ mask: Mask) -> some View {
@@ -68,4 +66,3 @@ extension View {
             )
     }
 }
-
