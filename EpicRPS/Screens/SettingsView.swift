@@ -13,26 +13,27 @@ struct SettingsView: View {
     @State var addNewPlayer = false
 
     var body: some View {
-
-        VStack {
-            NavigationHeader(title: "Settings")
-                .frame(maxWidth: .infinity)
-
-            gameTimeSelection
-                .padding(.horizontal)
-
-            musicAndPlayerSelection
-                .padding()
-
-            // добавление нового игрока
+        ZStack {
+            Color.white.ignoresSafeArea()
+            VStack {
+                NavigationHeader(title: "Settings")
+                    .frame(maxWidth: .infinity)
+                
+                gameTimeSelection
+                    .padding(.horizontal)
+                
+                musicAndPlayerSelection
+                    .padding()
+                
+                // добавление нового игрока
                 VStack {
                     HStack {
                         Text("Новый игрок")
                             .font(.custom(.rubikMedium, size: 18))
                             .foregroundStyle(.white)
-
+                        
                         Spacer()
-
+                        
                         Button {
                             addNewPlayer = true
                         } label: {
@@ -51,8 +52,9 @@ struct SettingsView: View {
                 }
                 .settingsStyle()
                 .padding(.horizontal)
-
-            Spacer()
+                
+                Spacer()
+            }
         }
         .animation(.easeInOut, value: vm.multiplayer)
         .navigationBarHidden(true)
@@ -208,6 +210,7 @@ struct SettingsView: View {
                 .opacity(0.7)
                 .textCase(.uppercase)
                 .padding([.leading, .top])
+                .foregroundStyle(.black)
             Spacer()
         }
     }
