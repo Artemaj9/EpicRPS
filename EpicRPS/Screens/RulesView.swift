@@ -32,6 +32,15 @@ struct RulesView: View {
             .padding(.top, 23)
         }
         .navigationBarHidden(true)
+        .gesture(
+            DragGesture(minimumDistance: 5.0, coordinateSpace: .local)
+            .onEnded { value in
+                if value.translation.width > 50 && abs(value.translation.height) < 50 {
+                     dismiss()
+                    }
+                }
+        )
+
     }
     
     private func customRule5Text() -> Text {

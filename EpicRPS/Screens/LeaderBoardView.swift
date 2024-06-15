@@ -6,6 +6,7 @@ import SwiftUI
 
 struct LeaderBoardView: View {
     @EnvironmentObject var vm: GameViewModel
+    @Environment(\.dismiss) private var dismiss
 //    var players2: [Player] {
 //        vm.allPlayers.sorted {
 //            $0.wins > $1.wins
@@ -159,7 +160,14 @@ struct LeaderBoardView: View {
             }
                 
         }
-
+        .gesture(
+            DragGesture(minimumDistance: 5.0, coordinateSpace: .local)
+            .onEnded { value in
+                if value.translation.width > 50 && abs(value.translation.height) < 50 {
+                     dismiss()
+                    }
+                }
+        )
     }
 }
 
