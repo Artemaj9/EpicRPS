@@ -20,7 +20,7 @@ extension View {
 
 struct SizeReader: ViewModifier {
     @Binding var size: CGSize
-    
+
     func body(content: Content) -> some View {
         content
             .background(

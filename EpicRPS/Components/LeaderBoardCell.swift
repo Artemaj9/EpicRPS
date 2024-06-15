@@ -1,8 +1,5 @@
 //
 //  LeaderBoardElement.swift
-//  EpicRPS
-//
-//  Created by Руслан on 13.06.2024.
 //
 
 import SwiftUI
@@ -20,9 +17,9 @@ struct LeaderBoardCell: View {
         ZStack {
             RoundedRectangle(cornerRadius: 22)
                 .foregroundStyle(getBackgroundColor())
-            HStack{
+            HStack {
                 HStack {
-                    
+
                     Image(avatar)
                         .resizableToFit()
                         .frame(height: 37)
@@ -54,20 +51,19 @@ struct LeaderBoardCell: View {
                 .padding(.horizontal, 20)
             }
             if winnerCheck {
-                HStack{
+                HStack {
                     Spacer()
                     Image(getMedal())
                         .resizableToFit()
                         .frame(height: 19)
-                        .offset(x:8)
+                        .offset(x: 8)
                 }
             }
         }
-        
-        
+
         .frame(height: winnerCheck ? 65 : 55)
         .padding(.horizontal, 30)
-        
+
     }
     private func getBackgroundColor() -> Color {
         switch placeInRankin {
@@ -81,8 +77,8 @@ struct LeaderBoardCell: View {
             return Color.clear
         }
     }
-    
-    private func getPoints () -> String {
+
+    private func getPoints() -> String {
         if result < 1000 {
             return String(result)
         }
@@ -101,7 +97,7 @@ struct LeaderBoardCell: View {
             return Color("rpsTextForCell")
         }
     }
-    
+
     private func getMedal() -> String {
         switch placeInRankin {
         case 1:
@@ -117,5 +113,6 @@ struct LeaderBoardCell: View {
 }
 
 #Preview {
-    LeaderBoardCell(placeInRankin: 4, avatar: "avatarTest", name: "Herman Welnchs", result: 20000, rate: 32)
+    LeaderBoardCell(
+        placeInRankin: 4, avatar: "avatarTest", name: "Herman Welnchs", result: 20000, rate: 32)
 }

@@ -23,7 +23,7 @@ struct NameEditingView: View {
                     check.toggle()
                 }
             VStack {
-                
+
                 HStack {
                     Text("Введите имя игрока")
                         .font(.custom(.rubikRegular, size: 16))
@@ -38,24 +38,31 @@ struct NameEditingView: View {
                     .overlay {
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(.gray, lineWidth: 1)
-                        
+
                     }
                 Spacer()
                 Button {
-                       if let ind = vm.allPlayers.firstIndex(where: { $0.name == vm.currentPlayer1.name}) {
-                            vm.allPlayers[ind].name = name
-                        }
+                    if let ind = vm.allPlayers.firstIndex(where: {
+                        $0.name == vm.currentPlayer1.name
+                    }) {
+                        vm.allPlayers[ind].name = name
+                    }
                     vm.currentPlayer1.name = name
-                    UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
+                    UserDefaultsService.shared.save(
+                        structs: vm.currentPlayer1, forKey: "currentPlayer1")
                     vm.addCurrentPlayers()
                     check.toggle()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.rpsShadowPeach)
-                        Text(checkLetters ? "Еще \(3 - name.count) \(name.count == 2 ? "буква" : "буквы" )" : checkBigLetters ? "Много букв": "OK")
-                            .font(.custom(.rubikMedium, size: 17))
-                            .foregroundStyle(.rpsLightGray)
+                        Text(
+                            checkLetters
+                                ? "Еще \(3 - name.count) \(name.count == 2 ? "буква" : "буквы" )"
+                                : checkBigLetters ? "Много букв" : "OK"
+                        )
+                        .font(.custom(.rubikMedium, size: 17))
+                        .foregroundStyle(.rpsLightGray)
                     }
                     .frame(width: 136, height: 37)
                 }
@@ -74,8 +81,3 @@ struct NameEditingView: View {
         }
     }
 }
-
-//#Preview {
-//    NameEditingView()
-//        .environmentObject(GameViewModel())
-//}

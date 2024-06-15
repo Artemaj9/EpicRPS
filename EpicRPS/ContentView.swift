@@ -6,7 +6,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var vm = GameViewModel()
-    
+
     var body: some View {
         ZStack {
             if vm.isSplash {

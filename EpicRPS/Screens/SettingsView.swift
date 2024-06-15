@@ -1,16 +1,10 @@
-//
-//  SettingsView.swift
-//
-//  Created by Evgeniy K on 11.06.2024.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var vm: GameViewModel
     @Environment(\.dismiss) private var dismiss
-    @State var index = 0
-    @State var addNewPlayer = false
+    @State private var index = 0
+    @State private var addNewPlayer = false
 
     var body: some View {
         ZStack {
@@ -18,41 +12,16 @@ struct SettingsView: View {
             VStack {
                 NavigationHeader(title: "Settings")
                     .frame(maxWidth: .infinity)
-                
+
                 gameTimeSelection
                     .padding(.horizontal)
-                
+
                 musicAndPlayerSelection
                     .padding()
-                
-                // добавление нового игрока
-                VStack {
-                    HStack {
-                        Text("Новый игрок")
-                            .font(.custom(.rubikMedium, size: 18))
-                            .foregroundStyle(.white)
-                        
-                        Spacer()
-                        
-                        Button {
-                            addNewPlayer = true
-                        } label: {
-                            Image(systemName: "plus.circle")
-                                .resizableToFit()
-                                .foregroundStyle(.white)
-                                .frame(width: 30, height: 30)
-                                .padding(.trailing, 1)
-                        }
-                        .sheet(isPresented: $addNewPlayer) {
-                            NewPlayerView(check: .constant(true))
-                        }
-                    }
-                    .hStackStyle()
-                    .padding(.bottom, 15)
-                }
-                .settingsStyle()
-                .padding(.horizontal)
-                
+
+                newPlayer
+                    .padding(.horizontal)
+
                 Spacer()
             }
         }
@@ -60,9 +29,9 @@ struct SettingsView: View {
         .navigationBarHidden(true)
         .gesture(
             DragGesture(minimumDistance: 5.0, coordinateSpace: .local)
-            .onEnded { value in
-                if value.translation.width > 50 && abs(value.translation.height) < 50 {
-                     dismiss()
+                .onEnded { value in
+                    if value.translation.width > 50 && abs(value.translation.height) < 50 {
+                        dismiss()
                     }
                 }
         )
@@ -71,7 +40,6 @@ struct SettingsView: View {
     private var gameTimeSelection: some View {
         VStack {
             sectionHeader(text: "время игры")
-
             HStack {
                 SettingsButton(text: "10 сек.") {
                     vm.gameTime = 10
@@ -107,6 +75,34 @@ struct SettingsView: View {
                     }
                 }
             }
+        }
+        .settingsStyle()
+    }
+
+    private var newPlayer: some View {
+        VStack {
+            HStack {
+                Text("Новый игрок")
+                    .font(.custom(.rubikMedium, size: 18))
+                    .foregroundStyle(.white)
+
+                Spacer()
+
+                Button {
+                    addNewPlayer = true
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .resizableToFit()
+                        .foregroundStyle(.white)
+                        .frame(width: 30, height: 30)
+                        .padding(.trailing, 1)
+                }
+                .sheet(isPresented: $addNewPlayer) {
+                    NewPlayerView(check: .constant(true))
+                }
+            }
+            .hStackStyle()
+            .padding(.bottom, 15)
         }
         .settingsStyle()
     }
@@ -154,15 +150,19 @@ struct SettingsView: View {
             Toggle("", isOn: $vm.multiplayer)
                 .onChange(of: vm.multiplayer) { value in
                     if value {
-                        vm.currentPlayer2 = vm.allPlayers.first(where: {$0.name != "Computer" && $0.name != vm.currentPlayer1.name}) ?? Player(name: "Player2", avatar: "character6")
+                        vm.currentPlayer2 =
+                            vm.allPlayers.first(where: {
+                                $0.name != "Computer" && $0.name != vm.currentPlayer1.name
+                            }) ?? Player(name: "Player2", avatar: "character6")
                     }
-
-            }
+                }
         }
         .hStackStyle()
     }
 
-    private func playerSelection(player: Player, label: String, action: @escaping (Player) -> Void) -> some View {
+    private func playerSelection(player: Player, label: String, action: @escaping (Player) -> Void)
+        -> some View
+    {
         HStack {
             Text(label)
                 .font(.custom(.rubikMedium, size: 18))
@@ -186,8 +186,9 @@ struct SettingsView: View {
                         }) {
                             HStack {
                                 Text(player.name.capitalized)
-                                if (label == "Игрок 1" && vm.currentPlayer1 == player) ||
-                                   (label == "Игрок 2" && vm.currentPlayer2 == player) {
+                                if (label == "Игрок 1" && vm.currentPlayer1 == player)
+                                    || (label == "Игрок 2" && vm.currentPlayer2 == player)
+                                {
                                     Image(systemName: "checkmark")
                                 }
                             }
@@ -217,8 +218,8 @@ struct SettingsView: View {
     }
 }
 
-private extension View {
-    func settingsStyle() -> some View {
+extension View {
+    fileprivate func settingsStyle() -> some View {
         self
             .padding(7)
             .background(.white)
@@ -227,13 +228,12 @@ private extension View {
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(lineWidth: 0.7)
-                    .fill(.black.opacity(0.9)))
+                    .fill(.black.opacity(0.9))
+            )
             .shadow(radius: 2, x: -1, y: 3)
     }
-}
 
-private extension View {
-    func hStackStyle() -> some View {
+    fileprivate func hStackStyle() -> some View {
         self
             .padding(12)
             .frame(maxHeight: 60)

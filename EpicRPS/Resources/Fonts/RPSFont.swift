@@ -11,7 +11,7 @@ enum RPSFont: String {
     case delaGothicOneRegular = "DelaGothicOne-Regular"
     case poppinsSemiBold = "Poppins-SemiBold"
     case poppinsRegular = "Poppins-Regular"
-    
+
 }
 
 extension Font {

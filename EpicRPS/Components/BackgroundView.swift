@@ -10,8 +10,9 @@ struct BackgroundView: View {
     var body: some View {
         EllipticalGradient(
             colors: [gradientColor1, gradientColor2],
-            center: .center)
-            .ignoresSafeArea()
+            center: .center
+        )
+        .ignoresSafeArea()
     }
 }
 

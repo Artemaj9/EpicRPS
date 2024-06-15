@@ -5,13 +5,13 @@
 import Foundation
 
 final class UserDefaultsService {
-    
+
     static let shared = UserDefaultsService()
-    
+
     private init() {}
-    
+
     private let defaults = UserDefaults.standard
-    
+
     func save<T: Codable>(structs: T, forKey key: String) {
         if let encoded = try? JSONEncoder().encode(structs) {
             defaults.set(encoded, forKey: key)
@@ -26,9 +26,8 @@ final class UserDefaultsService {
         }
         return nil
     }
-    
+
     func removeData(forKey key: String) {
         defaults.removeObject(forKey: key)
     }
 }
-
