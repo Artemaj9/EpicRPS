@@ -201,15 +201,15 @@ final class GameViewModel: ObservableObject {
     }
 
     private func updateArms() {
-        if !multiplayer {
             maleArm = maleArms[player1Selection.rawValue]
-            femaleArm = femaleArms[player2Selection.rawValue]
+        if player2Selection.rawValue == 1 && player1Score >= 1 {
+            femaleArm = femaleArms[3]
         } else {
-            maleArm = maleArms[player1Selection.rawValue]
             femaleArm = femaleArms[player2Selection.rawValue]
         }
     }
 }
 
-private let femaleArms = [FemaleArms.femaleRock, FemaleArms.femaleScissors, FemaleArms.femalePaper]
+private let femaleArms = [FemaleArms.femaleRock, FemaleArms.femaleScissors, FemaleArms.femalePaper, FemaleArms.femaleScissorsHurt]
 private let maleArms = [MaleArms.maleRock, MaleArms.maleScissors, MaleArms.malePaper]
+
