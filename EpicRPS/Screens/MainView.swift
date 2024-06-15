@@ -16,7 +16,9 @@ struct MainView: View {
     var body: some View {
         NavigationView {
         ZStack {
-            Color(.white).ignoresSafeArea()
+            Color(.rpsLightGray)
+                .ignoresSafeArea()
+            .ignoresSafeArea()
                     VStack {
                         HStack {
                             // Settings button

@@ -84,7 +84,6 @@ struct RoundView: View {
                     .environmentObject(vm)
                     .padding(10)
             }
-          
         }
         .overlay(alignment: .bottom) {
             GameButtons()

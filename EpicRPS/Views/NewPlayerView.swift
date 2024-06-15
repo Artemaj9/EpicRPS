@@ -10,7 +10,7 @@ import SwiftUI
 struct NewPlayerView: View {
 
     @EnvironmentObject var vm: GameViewModel
-    @Environment (\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     @State var name = "Player1"
     var checkBigLetters: Bool {
         name.count > 16
@@ -29,6 +29,7 @@ struct NewPlayerView: View {
             HStack {
                 Text("Введите имя игрока")
                     .font(.custom(.rubikRegular, size: 16))
+                    .offset(y: 8)
                     .foregroundStyle(.rpsGray)
                 Spacer()
             }
@@ -112,6 +113,7 @@ struct NewPlayerView: View {
                     .clipShape(.rect(cornerRadius: 18))
             }
             .padding(.top, 20)
+            .disabled(vm.allPlayers.contains(where: {$0.name == name }))
         }
         .padding(.horizontal, 40)
     }
@@ -128,4 +130,5 @@ struct NewPlayerView: View {
 
 #Preview {
     NewPlayerView(check: .constant(true))
+        .environmentObject(GameViewModel())
 }
