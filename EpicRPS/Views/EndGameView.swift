@@ -11,22 +11,34 @@ struct EndGameView: View {
     var body: some View {
         VStack{
             ZStack{
-                Circle()
-                    .foregroundStyle(.rpsDarkVioletEnd)
-                Image (vm.currentPlayer2.avatar)
-                    .resizableToFit()
-                    .frame(width: 70)
+                
+                if vm.multiplayer {
+                    Image(vm.winner == 1 ? vm.currentPlayer1.avatar : vm.currentPlayer2.avatar)
+                        .resizableToFit()
+                        .frame(width: 70)
+                } else {
+                    Circle()
+                        .foregroundStyle(.rpsDarkVioletEnd)
+                    Image (vm.currentPlayer1.avatar)
+                        .resizableToFit()
+                        .frame(width: 70)
+                }
                     
             }
             .frame(width: 176, height: 176)
             VStack(spacing: 20) {
-                Text(vm.winner == 1 ? "You Win" : "You Lose")
-                    .font(.custom("Rubik-Medium", size: 25))
-                    .foregroundStyle( vm.winner == 1 ? .rpsOrangeText : .black )
-                Text("\(vm.player1Score) - \(vm.player2Score)")
-                    .font(.custom("Rubik-Bold", size: 45))
-                    .foregroundStyle(.white)
-                
+                if vm.multiplayer {
+                    Text(vm.winner == 1 ? "\(vm.currentPlayer1.name) win!" : "\(vm.currentPlayer2.name) win!")
+                        .font(.custom("Rubik-Medium", size: 25))
+                        .foregroundStyle(.white)
+                } else {
+                    Text(vm.winner == 1 ? "You Win" : "You Lose")
+                        .font(.custom("Rubik-Medium", size: 25))
+                        .foregroundStyle( vm.winner == 1 ? .rpsOrangeText : .black )
+                }
+                    Text("\(vm.player1Score) - \(vm.player2Score)")
+                        .font(.custom("Rubik-Bold", size: 45))
+                        .foregroundStyle(.white)
             }
             .padding()
             HStack (spacing: 40){
@@ -69,13 +81,21 @@ struct EndGameView: View {
         }
         .preferredColorScheme(.dark)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.radialGradient(colors: vm.winner == 2 ? [.rpsOrangeGradientBG, .rpsRedGradientBG] : [.rpsDarkBlueGradientBG, .rpsBlueGradientBG],
-                                    center: .center, startRadius: 1, endRadius: 320))
-
+        .background(
+            .radialGradient(
+                colors: {
+                    if vm.multiplayer {
+                        return [.rpsdarkgrad, .rpslightgrad]
+                    } else if vm.winner == 2 {
+                        return [.rpsOrangeGradientBG, .rpsRedGradientBG]
+                    } else {
+                        return [.rpsDarkBlueGradientBG, .rpsBlueGradientBG]
+                    }
+                }(),
+                center: .center,
+                startRadius: 1,
+                endRadius: 320
+            )
+        )
     }
 }
-
-//#Preview {
-//    EndGameView(avatarImageName: "avatarTest", scorePlayer1: 1, scorePlayer2: 3)
-//}
-
