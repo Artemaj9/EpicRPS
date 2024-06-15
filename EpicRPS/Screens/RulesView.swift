@@ -8,30 +8,33 @@ struct RulesView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
-            NavigationHeader(title: "Rules")
-                .frame(maxWidth: .infinity)
-            VStack(alignment: .leading, spacing: 16) {
-                
-                RulesStyle(number: "1", textRule: Text(RulesTxt.rule1))
-                RulesStyle(number: "2", textRule: Text(RulesTxt.rule2))
-                
-                VStack(alignment: .leading) {
-                    RulesExtraStyle(gesture: RulesImage.stone, textRule: RulesTxt.rule21)
-                    RulesExtraStyle(gesture: RulesImage.paper, textRule: RulesTxt.rule22)
-                    RulesExtraStyle(gesture: RulesImage.scissors, textRule: RulesTxt.rule23)
+        ZStack {
+            Color(.rpsLightGray).ignoresSafeArea()
+            VStack {
+                NavigationHeader(title: "Rules")
+                    .frame(maxWidth: .infinity)
+                VStack(alignment: .leading, spacing: 16) {
+                    
+                    RulesStyle(number: "1", textRule: Text(RulesTxt.rule1))
+                    RulesStyle(number: "2", textRule: Text(RulesTxt.rule2))
+                    
+                    VStack(alignment: .leading) {
+                        RulesExtraStyle(gesture: RulesImage.stone, textRule: RulesTxt.rule21)
+                        RulesExtraStyle(gesture: RulesImage.paper, textRule: RulesTxt.rule22)
+                        RulesExtraStyle(gesture: RulesImage.scissors, textRule: RulesTxt.rule23)
+                    }
+                    
+                    RulesStyle(number: "3", textRule: Text(RulesTxt.rule3))
+                    RulesStyle(number: "4", textRule: Text(RulesTxt.rule4))
+                    RulesStyle(number: "5", textRule: customRule5Text())
+                    Spacer()
+                    Spacer()
                 }
-                
-                RulesStyle(number: "3", textRule: Text(RulesTxt.rule3))
-                RulesStyle(number: "4", textRule: Text(RulesTxt.rule4))
-                RulesStyle(number: "5", textRule: customRule5Text())
-                Spacer()
-                Spacer()
+                .padding(.leading, 27)
+                .padding(.top, 23)
             }
-            .padding(.leading, 27)
-            .padding(.top, 23)
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
     }
     
     private func customRule5Text() -> Text {
