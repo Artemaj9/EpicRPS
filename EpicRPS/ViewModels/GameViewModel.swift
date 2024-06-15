@@ -39,10 +39,13 @@ final class GameViewModel: ObservableObject {
     }
     // новый игрок
     func addNewPlayer(name: String, avatar: String) {
+        if !allPlayers.contains(where: {$0.name == name }) {
             let newPlayer = Player(name: name, avatar: avatar)
+            
             allPlayers.append(newPlayer)
             savePlayerStats()
             allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
+        }
         }
 
     func startRound() {

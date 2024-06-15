@@ -141,6 +141,12 @@ struct SettingsView: View {
                 .font(.custom(.rubikMedium, size: 18))
                 .foregroundStyle(.white)
             Toggle("", isOn: $vm.multiplayer)
+                .onChange(of: vm.multiplayer) { value in
+                    if value {
+                        vm.currentPlayer2 = vm.allPlayers.first(where: {$0.name != "Computer" && $0.name != vm.currentPlayer1.name}) ?? Player(name: "Player2", avatar: "character6")
+                    }
+
+            }
         }
         .hStackStyle()
     }
