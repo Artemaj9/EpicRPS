@@ -28,7 +28,11 @@ struct GameView: View {
         .onAppear {
             if let audio = Sounds(rawValue: vm.backGroundMusic) {
                 SoundService.player.play(key: audio)
+                if !vm.multiplayer {
+                    vm.currentPlayer2 = vm.allPlayers.first(where: {$0.name == "Computer"}) ?? Player(name: "Computer", avatar: "avatarTest")
+                }
             }
+            vm.addCurrentPlayers()
         }
     }
 }

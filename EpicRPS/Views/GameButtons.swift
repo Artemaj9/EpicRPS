@@ -40,8 +40,9 @@ struct GameButtons: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 80, maxHeight: 80)
-                .opacity(vm.player1Selection == selection ? 1.0 : 0.8)
-                .scaleEffect(vm.player1Selection == selection ? 1.1 : 1.0)
+                .opacity(vm.player1Selection == selection && !vm.multiplayer ? 1.0 : 0.8)
+                .scaleEffect(vm.player1Selection == selection && !vm.multiplayer ? 1.1 : 1.0)
+                .colorMultiply(vm.player1Selection == selection && !vm.multiplayer ? buttonColor[selection.rawValue] : Color.white)
         }
         .disabled(vm.player1Selection != .notSelect && vm.player2Selection != .notSelect)
     }
@@ -79,7 +80,7 @@ struct GameButtons: View {
         .disabled(vm.secondPlayerTurn || vm.player1Selection == .notSelect)
     }
 }
-
+private let buttonColor: [Color] = [.rpsLightPeach, .rpsRedGradientBG, .rpsScaleGreen]
 #Preview {
     VStack {
         GameButtons()
