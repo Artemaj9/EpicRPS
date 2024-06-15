@@ -8,6 +8,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var vm: GameViewModel
+    @Environment(\.dismiss) private var dismiss
     @State var index = 0
     @State var addNewPlayer = false
 
@@ -57,6 +58,14 @@ struct SettingsView: View {
         }
         .animation(.easeInOut, value: vm.multiplayer)
         .navigationBarHidden(true)
+        .gesture(
+            DragGesture(minimumDistance: 5.0, coordinateSpace: .local)
+            .onEnded { value in
+                if value.translation.width > 50 && abs(value.translation.height) < 50 {
+                     dismiss()
+                    }
+                }
+        )
     }
 
     private var gameTimeSelection: some View {
