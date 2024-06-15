@@ -1,8 +1,5 @@
 //
 //  ImageData.swift
-//  EpicRPS
-//
-//  Created by Daria on 11.06.2024.
 //
 
 import Foundation

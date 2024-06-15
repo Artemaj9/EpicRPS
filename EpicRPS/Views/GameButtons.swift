@@ -9,10 +9,10 @@ import SwiftUI
 
 struct GameButtons: View {
     @EnvironmentObject var vm: GameViewModel
-    private var selectionFlag: Bool  {
+    private var selectionFlag: Bool {
         vm.player1Selection != .notSelect && !vm.secondPlayerTurn
     }
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -46,9 +46,11 @@ struct GameButtons: View {
                 .frame(maxWidth: 80, maxHeight: 80)
                 .opacity(vm.player1Selection == selection && !vm.multiplayer ? 1.0 : 0.8)
                 .scaleEffect(vm.player1Selection == selection && !vm.multiplayer ? 1.1 : 1.0)
-                .colorMultiply(vm.player1Selection == selection && !vm.multiplayer ? buttonColor[selection.rawValue] : Color.white)
+                .colorMultiply(
+                    vm.player1Selection == selection && !vm.multiplayer
+                        ? buttonColor[selection.rawValue] : Color.white)
         }
-        .disabled(vm.player1Selection != .notSelect && vm.player2Selection != .notSelect)
+        .disabled(vm.player1Selection != .notSelect &&  (vm.player2Selection != .notSelect || !vm.secondPlayerTurn) || vm.isPaused)
     }
 
     private func handleSelection(_ selection: Selection) {
@@ -76,13 +78,15 @@ struct GameButtons: View {
             vm.isPaused = false
             SoundService.player.play(key: .tap, isHit: true)
         } label: {
-                Image("select")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 80, maxHeight: 80)
-                    .scaleEffect(selectionFlag
-                                 ? 1.4 : 1)
-                    .animation(.smooth, value: vm.player1Selection)
+            Image("select")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 80, maxHeight: 80)
+                .scaleEffect(
+                    selectionFlag
+                        ? 1.4 : 1
+                )
+                .animation(.smooth, value: vm.player1Selection)
         }
         .disabled(vm.secondPlayerTurn || vm.player1Selection == .notSelect)
     }

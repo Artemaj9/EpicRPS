@@ -1,8 +1,5 @@
 //
 //  NavigationHeader.swift
-//  EpicRPS
-//
-//  Created by Руслан on 11.06.2024.
 //
 
 import SwiftUI
@@ -13,11 +10,11 @@ struct NavigationHeader: View {
     var isPaused: Binding<Bool>?
     var rightButtonAction: (() -> Void)?
     var leftButtonAction: (() -> Void)?
-    
+
     @Environment(\.dismiss) private var dismiss
-    
+
     var body: some View {
-        HStack{
+        HStack {
             Button {
                 leftButtonAction?()
                 dismiss()
@@ -37,11 +34,13 @@ struct NavigationHeader: View {
             Button {
                 rightButtonAction?()
             } label: {
-                Image(systemName: !(isPaused?.wrappedValue ?? false) ? "pause.circle" : "play.circle")
-                    .resizableToFit()
-                    .frame(width: 25)
-                    .foregroundStyle(.white)
-                    .opacity(isRound ? 1 : 0)
+                Image(
+                    systemName: !(isPaused?.wrappedValue ?? false) ? "pause.circle" : "play.circle"
+                )
+                .resizableToFit()
+                .frame(width: 25)
+                .foregroundStyle(.white)
+                .opacity(isRound ? 1 : 0)
 
             }
             .opacity(isRound ? 1 : 0)
@@ -55,7 +54,7 @@ struct NavigationHeader: View {
 }
 
 #Preview {
-    NavigationHeader(title: "Игра",isRound: false, isPaused: .constant(true)) {
+    NavigationHeader(title: "Игра", isRound: false, isPaused: .constant(true)) {
         print("LeftButton")
     }
 

@@ -13,7 +13,7 @@ enum Selection: Int {
 
 extension Selection {
     static func random() -> Selection {
-        let selections: [Selection] = [.rock,.scissors,.papper]
+        let selections: [Selection] = [.rock, .scissors, .papper]
         let randomIndex = Int(arc4random()) % selections.count
         return selections[randomIndex]
     }

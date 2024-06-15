@@ -1,5 +1,5 @@
-import SwiftUI
 import Combine
+import SwiftUI
 
 final class GameViewModel: ObservableObject {
     @AppStorage("gameTime") var gameTime: Double = 10
@@ -20,28 +20,35 @@ final class GameViewModel: ObservableObject {
     @Published var maleArm: String = MaleArms.maleO
     @Published var isDraw = false
     @Published var secondPlayerTurn = false
-    @Published var currentPlayer1: Player = UserDefaultsService.shared.get(forKey: "currentPlayer1") ?? Player(name: "Player1", avatar: "character2")
-    @Published var currentPlayer2: Player = UserDefaultsService.shared.get(forKey: "currentPlayer2") ?? Player(name: "Computer", avatar: "charcter8")
-    @Published var allPlayers: [Player] = UserDefaultsService.shared.get(forKey: "allPlayers") ?? [Player(name: "Computer", avatar: "avatarTest"), Player(name: "Player1", avatar: "character2")]
-    
+    @Published var currentPlayer1: Player =
+        UserDefaultsService.shared.get(forKey: "currentPlayer1")
+        ?? Player(name: "Player1", avatar: "character2")
+    @Published var currentPlayer2: Player =
+        UserDefaultsService.shared.get(forKey: "currentPlayer2")
+        ?? Player(name: "Computer", avatar: "charcter8")
+    @Published var allPlayers: [Player] =
+        UserDefaultsService.shared.get(forKey: "allPlayers") ?? [
+            Player(name: "Computer", avatar: "avatarTest"),
+            Player(name: "Player1", avatar: "character2"),
+        ]
+
     @Published var isStrokeAnimation = false
-    @Published var armsOffset:CGFloat = 0
+    @Published var armsOffset: CGFloat = 0
     @Published var strokeTime: Double = 0
-    
+
     var timer: AnyCancellable?
     var cancellables = Set<AnyCancellable>()
     var isCrashed = false
 
-    
     func addCurrentPlayers() {
         savePlayerStats()
         allPlayers = UserDefaultsService.shared.get(forKey: "allPlayers") ?? []
     }
     // новый игрок
     func addNewPlayer(name: String, avatar: String) {
-        if !allPlayers.contains(where: {$0.name == name }) {
+        if !allPlayers.contains(where: { $0.name == name }) {
             let newPlayer = Player(name: name, avatar: avatar)
-            
+
             allPlayers.append(newPlayer)
             currentPlayer1 = newPlayer
             savePlayerStats()
@@ -66,14 +73,12 @@ final class GameViewModel: ObservableObject {
             self.resetTimer()
         }
     }
-    
-    
+
     func setupStrokeTimer() {
-     //   SoundService.player.preloadAudio(file: "crash")
         timer = Timer.publish(every: 0.1, on: .main, in: .common)
             .autoconnect()
             .sink { [unowned self] _ in
-                    strokeTime += 0.1
+                strokeTime += 0.1
                 if strokeTime >= 0.8 && !isCrashed {
                     SoundService.player.hitPlayer.play()
                     isCrashed = true
@@ -202,7 +207,7 @@ final class GameViewModel: ObservableObject {
     }
 
     private func updateArms() {
-            maleArm = maleArms[player1Selection.rawValue]
+        maleArm = maleArms[player1Selection.rawValue]
         if player2Selection.rawValue == 1 && player1Score >= 1 {
             femaleArm = femaleArms[3]
         } else {
@@ -211,6 +216,8 @@ final class GameViewModel: ObservableObject {
     }
 }
 
-private let femaleArms = [FemaleArms.femaleRock, FemaleArms.femaleScissors, FemaleArms.femalePaper, FemaleArms.femaleScissorsHurt]
+private let femaleArms = [
+    FemaleArms.femaleRock, FemaleArms.femaleScissors, FemaleArms.femalePaper,
+    FemaleArms.femaleScissorsHurt,
+]
 private let maleArms = [MaleArms.maleRock, MaleArms.maleScissors, MaleArms.malePaper]
-

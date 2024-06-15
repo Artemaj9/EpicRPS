@@ -1,8 +1,5 @@
 //
 //  TextImage.swift
-//  EpicRPS
-//
-//  Created by Daria on 11.06.2024.
 //
 
 import Foundation
@@ -23,4 +20,3 @@ enum MedalCellImage {
     static let silverMedal = "Silver"
     static let bronzeMedal = "Bronze"
 }
-

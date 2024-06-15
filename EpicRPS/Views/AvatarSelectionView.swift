@@ -8,6 +8,7 @@ struct AvatarSelectionView: View {
     @EnvironmentObject var vm: GameViewModel
     @State var playerInd = 1
     @Binding var check: Bool
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -17,20 +18,21 @@ struct AvatarSelectionView: View {
                     check.toggle()
                 }
             VStack {
-                VStack{
-                    HStack{
+                VStack {
+                    HStack {
                         ForEach(1..<5) { ind in
                             Button {
                                 playerInd = ind
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20)
-                                        .foregroundStyle( playerInd == ind ? .rpsScaleGreen : .rpsLightGray)
+                                        .foregroundStyle(
+                                            playerInd == ind ? .rpsScaleGreen : .rpsLightGray)
                                     Image("character\(ind)")
                                         .resizableToFit()
                                         .frame(width: 29)
                                     if playerInd == ind {
-                                        VStack() {
+                                        VStack {
                                             Spacer()
                                             HStack {
                                                 Spacer()
@@ -46,19 +48,20 @@ struct AvatarSelectionView: View {
                             }
                         }
                     }
-                    HStack{
+                    HStack {
                         ForEach(5..<9) { ind in
                             Button {
                                 playerInd = ind
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20)
-                                        .foregroundStyle( playerInd == ind ? .rpsScaleGreen : .rpsLightGray)
+                                        .foregroundStyle(
+                                            playerInd == ind ? .rpsScaleGreen : .rpsLightGray)
                                     Image("character\(ind)")
                                         .resizableToFit()
                                         .frame(width: 29)
                                     if playerInd == ind {
-                                        VStack() {
+                                        VStack {
                                             Spacer()
                                             HStack {
                                                 Spacer()
@@ -84,10 +87,11 @@ struct AvatarSelectionView: View {
                 .padding(.vertical, 20)
                 Button {
                     vm.currentPlayer1.avatar = "character\(playerInd)"
-                    UserDefaultsService.shared.save(structs: vm.currentPlayer1, forKey: "currentPlayer1")
+                    UserDefaultsService.shared.save(
+                        structs: vm.currentPlayer1, forKey: "currentPlayer1")
                     vm.addCurrentPlayers()
                     check.toggle()
-                }label: {
+                } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.rpsShadowPeach)
@@ -103,17 +107,12 @@ struct AvatarSelectionView: View {
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .frame(width: 314, height: 328)
-            
+
         }
-        .onAppear{
+        .onAppear {
             if let ind = Int(String(vm.currentPlayer1.avatar.popLast()!)) {
                 playerInd = ind
             }
         }
     }
 }
-
-//#Preview {
-//    AvatarSelectionView()
-//        .environmentObject(GameViewModel())
-//}

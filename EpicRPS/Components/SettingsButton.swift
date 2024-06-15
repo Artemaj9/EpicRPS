@@ -1,19 +1,16 @@
 //
 //  SettingsButton.swift
-//  EpicRPS
-//
-//  Created by Evgeniy K on 11.06.2024.
 //
 
 import SwiftUI
 
 struct SettingsButton: View {
-    
+
     var text = "30 сек."
     var action: () -> Void
-    
+
     var body: some View {
-        
+
         Button {
             action()
         } label: {

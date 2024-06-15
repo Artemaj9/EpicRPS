@@ -1,8 +1,5 @@
 //
 //  NewPlayerView.swift
-//  EpicRPS
-//
-//  Created by Evgeniy K on 14.06.2024.
 //
 
 import SwiftUI
@@ -113,7 +110,7 @@ struct NewPlayerView: View {
                     .clipShape(.rect(cornerRadius: 18))
             }
             .padding(.top, 20)
-            .disabled(vm.allPlayers.contains(where: {$0.name == name }))
+            .disabled(vm.allPlayers.contains(where: { $0.name == name }))
         }
         .padding(.horizontal, 40)
     }
