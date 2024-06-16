@@ -35,8 +35,8 @@ struct RoundView: View {
         }
         .onAppear {
             vm.setupTimer()
-            SoundService.player.preloadAudio(file: "tap")
-            SoundService.player.preloadAudio(file: "crash", isStroke: false)
+            SoundService.player.preloadAudio(file: Sounds.tap.rawValue)
+            SoundService.player.preloadAudio(file: Sounds.crash.rawValue, isStroke: false)
         }
         .preferredColorScheme(.dark)
     }

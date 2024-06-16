@@ -151,10 +151,10 @@
 				AC00CD992C1510D60085A617 /* ContentView.swift */,
 				AC00CDAB2C1513470085A617 /* Screens */,
 				AC00CDB22C1514FE0085A617 /* Views */,
+				AC00CDA52C1511D40085A617 /* Components */,
 				AC00CDC32C1520F50085A617 /* ViewModels */,
 				AC00CDBA2C1518190085A617 /* Models */,
 				AC5453892C17547D003459D1 /* UserDefaults */,
-				AC00CDA52C1511D40085A617 /* Components */,
 				AC00CDB72C1515A10085A617 /* Extensions */,
 				AC340D002C18F642000A3B15 /* Metal */,
 				AC00CDA82C1512450085A617 /* Resources */,
@@ -379,7 +379,7 @@
 		AC00CDC72C1523240085A617 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -390,9 +390,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

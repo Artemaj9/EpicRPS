@@ -108,6 +108,7 @@ struct NewPlayerView: View {
                     .frame(width: 145)
                     .background(.rpsPeachSettings)
                     .clipShape(.rect(cornerRadius: 18))
+                    .saturation(vm.allPlayers.contains(where: { $0.name == name }) ? 0.3 : 1)
             }
             .padding(.top, 20)
             .disabled(vm.allPlayers.contains(where: { $0.name == name }))

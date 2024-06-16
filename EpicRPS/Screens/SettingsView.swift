@@ -180,7 +180,7 @@ struct SettingsView: View {
                     .frame(width: 30, height: 30)
 
                 Menu {
-                    ForEach(Array(vm.allPlayers.enumerated()), id: \.offset) { index, player in
+                    ForEach(Array(vm.allPlayers.filter{$0.name != "Computer"}.enumerated()), id: \.offset) { index, player in
                         Button(action: {
                             action(player)
                         }) {

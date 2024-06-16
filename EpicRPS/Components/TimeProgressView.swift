@@ -34,8 +34,8 @@ struct TimeProgress: View {
 
                 Text(
                     String(
-                        format: "%2d:%02d", Int(vm.gameTime - vm.time) / 60,
-                        Int(vm.gameTime - vm.time) % 60)
+                        format: "%2d:%02d", Int((vm.gameTime - vm.time).rounded()) / 60,
+                        Int((vm.gameTime - vm.time).rounded()) % 60)
                 )
                 .font(.custom(RPSFont.rubikRegular, size: 14))
                 .foregroundStyle(.white)

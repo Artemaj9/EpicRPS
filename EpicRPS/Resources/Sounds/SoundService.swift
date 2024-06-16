@@ -55,6 +55,7 @@ class SoundService {
                 avPlayer?.play()
             } else {
                 strokePlayer = try AVAudioPlayer(contentsOf: url!)
+                strokePlayer.volume = 0.5
                 strokePlayer?.play()
             }
 

@@ -32,17 +32,13 @@ struct EndGameView: View {
 
     private var avatar: some View {
         ZStack {
-            if vm.multiplayer {
+            if !vm.multiplayer {
+                Circle()
+                    .foregroundStyle(.rpsDarkVioletEnd)
+            }
                 Image(vm.winner == 1 ? vm.currentPlayer1.avatar : vm.currentPlayer2.avatar)
                     .resizableToFit()
                     .frame(width: 70)
-            } else {
-                Circle()
-                    .foregroundStyle(.rpsDarkVioletEnd)
-                Image(vm.currentPlayer1.avatar)
-                    .resizableToFit()
-                    .frame(width: 70)
-            }
         }
     }
 
